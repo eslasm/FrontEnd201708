@@ -9,6 +9,12 @@
     <body>
             <!-- See osa ilmub ekraanile -->
             <header>
+                <noscript>
+                    Palun aktiveerige javascript
+                </noscript>
+                <a href="/">
+                    <img src="http://g1.nh.ee/images/pix/kass-66103366.jpg" height="200"alt="must kass">
+                </a>
                 <nav>
                     <!-- unordered list sobib menüüks -->
                     <ul>
@@ -30,29 +36,103 @@
                 <!-- blogipostitus vm jupp -->
                 <article>
                     <h1>Tere  maailm! </h1>
+                    <time datetime="2017-08-10">10-s august 2017 </time><br>
+                    <span> Autor: </span><cite>Malle Tamm </cite> <br>
                     <blockquote>
                         Siin on eraldi tsitaat.
+                        <!-- tsitaadi allikas -->
+                        <cite>Juku Tiik</cite>
                     </blockquote>
                     <p>
-                        Lorem ipsum dolor sit amet, <q> Tsitaat </q>consectetur adipiscing elit. Suspendisse nibh sapien, placerat eu justo eget, mollis laoreet neque. Sed eu varius augue, nec interdum magna. Nam purus enim, efficitur a iaculis vitae, gravida elementum leo. Nulla ut dignissim metus. Vestibulum ultricies ante ornare augue.
+                        Lorem ipsum <!-- link definitsioonile --> <a href= "#def-firefox">Firefox </a> dolor sit amet, <q> Tsitaat </q>consectetur adipiscing elit. Suspendisse nibh sapien, placerat eu justo eget, mollis laoreet neque. Sed eu varius augue, nec interdum magna. Nam purus enim, efficitur a iaculis vitae, gravida elementum leo. Nulla ut dignissim metus. Vestibulum ultricies ante ornare augue.
                     </p>
                     <p>
-                        Cras aliquam lacus non nisl congue congue. Etiam nec nulla ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas varius pellentesque risus. Vestibulum nec sem libero. Vivamus finibus ornare lacus vel vehicula. In euismod quam et sem tristique, in dictum neque accumsan. Oconsectetur adipiscing elit. Suspendisse nibh sapien, placerat eu justo eget, mollis laoreet neque. Sed eu varius augue, nec interdum magna. Nam purus enim, efficitur a iaculis vitae, gravida elementum leo. Nulla ut dignissim metus. Vestibulum ultricies ante ornare augue.
+                        Cras aliquam <abbr title="hüpertekst märgistuskeel">HTML </abbr> lacus non nisl congue <dfn> definitsioon </dfn> Etiam nec nulla ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas varius pellentesque risus. Vestibulum nec sem libero. Vivamus finibus ornare lacus vel vehicula. In euismod quam et sem tristique, in dictum neque accumsan. Oconsectetur adipiscing elit. Suspendisse nibh sapien, placerat eu justo eget, mollis laoreet neque. Sed eu varius augue, nec interdum magna. Nam purus enim, efficitur a iaculis vitae, gravida elementum leo. Nulla ut dignissim metus. Vestibulum ultricies ante ornare augue.
                     </p>
+                    <hr> <!-- teema vahetus -->
                     <p>
-                        Aliquam consequat id mauris eu posuere. Sed vestibulum leo purus, sed rhoncus quam consectetur non. Etiam vitae est orci. Integer consequat blandit tortor eu condimentum. Sed volutpat eros a risus molestie, sit amet blandit neque feugiat. Integer est ex, pellentesque et ex in, venenatis aliquet metus. Vivamus vulputate nisi ultricies nulla laoreet, at pellentesque massa sodales. Morbi quis maximus turpis, nec vulputate arcu. Donec quis ornare leo.
-                    </p> 
+                        Cras aliquam lacus non nisl congue <dfn> definitsioon </dfn> Etiam nec nulla ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas varius pellentesque risus. Vestibulum nec sem libero. Vivamus finibus ornare lacus vel vehicula. In euismod quam et sem tristique, in dictum neque accumsan. Oconsectetur adipiscing elit. Suspendisse nibh sapien, placerat eu justo eget, mollis laoreet neque. Sed eu varius augue, nec interdum magna. Nam purus enim, efficitur a iaculis vitae, gravida elementum leo. Nulla ut dignissim metus. Vestibulum ultricies ante ornare augue.
+                    </p>
+                    <ul>
+                        <li>
+                            <strong><code>&lt;strong&gt;</code></strong>
+                            on parem kui <code>&lt;b&gt;</code>                             
+                        </li>
+                        <li>
+                            <em><code>&lt;em&gt;</code></em>
+                            on parem kui <e>&lt;e&gt;</e>                             
+                        </li>
+                        <li>
+                            <mark><code>&lt;mark&gt;</code></mark>
+                            on parem kui <span>&lt;span&gt;</span>                             
+                        </li>
+                        <li>
+                            <del><code>&lt;del&gt;</code></del>
+                            on parem kui <u>&lt;u&gt;</u>                             
+                        </li>
+                        
+                        <li>
+                            <ins><code>&lt;ins&gt;</code></ins>
+                            on parem kui <u>&lt;u&gt;</u>                             
+                        </li>
+                        <li>
+                            <code><var>x</var> = <var>y</var> + <var>z</var></code>
+                        </li>
+                        <li>
+                            Kasuta kopeerimiseks aklaviatuuril <kbd>Ctrl</kbd> + <kbd>c</kbd>
+                        </li>
+                        <li>
+                            Programmi väljundi näide: <samp>Viga real 6. </samp>
+                        </li>
+                        <li>
+                            H<sub>2</sub>O
+                        </li>
+                        <li>
+                            2<sup>-1</sup>
+                        </li>
+                    </ul>
+                    <h4>Tulemused</h4>
+                    <ol> <!-- ordered list, annab järjestuse-->
+                        <pre><!-- spetsiifiline kujundus jääb esialgses vormingus-->
+Tere Juku
+ Tere Malle
+  Tere Jaana
+
+                        </pre>
+                        <li>Juku Tiik</li>
+                        <li>Malle Kiik</li>
+                        <li>Jaana Siil</li>
+                    <p>
+                        <!-- definitsiooni elemendid -->
+                        <dl>
+                            <dt id="def-firefox">firefox </dt>
+                            <dd>
+                                A free, open source, cross-platform,
+                                graphical web browser developed by the
+                                Mozilla Corporation and hundreds of
+                                volunteers.
+                            </dd>
+                        </dl>
+                    </p>
+                    <br>
+                    <a href="#top">Üles </a> 
                 </article>   
             </main>
             <!-- väikese tähtsusega otsingumootorite jaoks näit reklaam -->
             <aside>
-
+                <figure>
+                    <video controls autoplay muted>
+                        <source src="http://clips.vorwaerts-gabh.de/VfE_html5.mp4">
+                        Ei toeta.
+                     <!-- kirjeldussilt -->
+                    <figcaption>funny video </figcaption>
+                </figure>
             </aside>
             <footer>
                 <address>
-                    <a href=mailto:helbe(ät)mail.ee>helbe(ät)mail.ee</a>
+                    <a href=mailto:helbe(ät)mail.ee>Juku(ät)mail.ee</a>
                     <br>
-                    <a href="tel:+3725262833">+372 5262 833</a>
+                    <a href="tel:+3725262833">+372 4564564</a>
                     <br>
                     Estonia 74821
                     <br>
