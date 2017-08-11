@@ -1,6 +1,7 @@
 article {
     background:lightgoldenrodyellow;
     color:darkblue;
+    width:75%;
 }
 
 #coffe {
@@ -17,7 +18,7 @@ aside {
 }
 
 [controls] {
-
+    border:1px dashed black;
 }
 
 header li {
@@ -45,5 +46,33 @@ tr:nth-child(even) {
 }
 
 span::before {
-    margin-left:5px;
+    content:"";
+}
+
+@media screen and (min-width:800px) {
+    html {
+    }
+    h1 {
+        font-size:2em;
+    }
+    p {
+        font-size:1em;
+    }
+}
+
+@media print {
+    html {
+        font-size:16pt;
+    }
+}
+
+aside {
+    padding-left:20%;
+    margin-left:5%;
+}
+
+q {
+    display:inline-block; 
+    width:300px;
+
 }
