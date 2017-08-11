@@ -1,13 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+p{
+    font-family: 'Indie Flower', cursive;
+}
 article {
     background-color: lightgoldenrodyellow;
     color: blue;
+    width: 75%;
 }
 .definitsioon {
     background-color: lightskyblue;
 }
 #def-firefox{
     border-style: solid;
-    border-width: 1px; 
+    border-width: 2px;
+    border-radius: 10px 20px;
 }
 [controls] {
     border-style: dashed;
@@ -24,7 +31,7 @@ nav ul {
     list-style-type: none;
 }
 article p::first-letter {
-    font-size: 200%;
+    font-size: 100%;
 }
 ::-moz-selection, ::-ms-selection, ::-webkit-selection {
   color: gold;
@@ -46,4 +53,31 @@ tbody > tr:nth-child(0n+3) {
 }
 blockquote {
     color: saddlebrown!important;
+}
+@media screen and (min-width:800px) {
+    html {
+        font-size: 150%;
+    }
+    h1{
+        font-size: 1em;
+    }
+    p{
+        font-size: 0,5em;
+    }
+}
+@media print {
+    html{
+        font-size: 16pt;
+    }
+}
+aside{
+    margin-right: 0%;
+    padding-top: 5%;
+    margin-left: 5%;
+}   
+q {
+    background-color: azure;
+    width: 300px;
+    display:inline-block;
+    text-align: center;
 }
