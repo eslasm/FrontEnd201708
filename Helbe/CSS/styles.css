@@ -1,5 +1,5 @@
-@import url(<link href="https://fonts.googleapis.com/css?family=Indie+Flower">)
-article p{
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower");
+article p {
     font-family: 'Indie Flower';
 }
 article {
@@ -77,4 +77,12 @@ Q{
     width: 200px;
     display: inline-block;
     text-align: center
+}
+#backvideo {
+    position: fixed;
+    z-index: -100;
+    min-width: 100%;
+    background: url (http://thenewcode.com/assets/images.polina.jpg)
+    background-size: cover;
+
 }

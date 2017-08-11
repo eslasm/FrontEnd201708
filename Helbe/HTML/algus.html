@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <!-- lang näitab mis keeles leht on-->
-<html lang="et">
+<!-- open graphi kasutab  ja eesti keel-->
+<html prefix=" og: http://ogp.me/ns#" lang="et">
     <head>
         <!-- päisesse kirjutatav info ei ilmu otseselt ekraanile-->
-        <meta charset="utf-8">
-        <!-- ilmub veebilehitseja ribale -->
+        <!-- ilmub veebilehitseja ribale soovitatav 6 sona-->
         <title> algus </title>
-        <link rel="stylesheet" href="../CSS/styles.css"
+        <meta charset="utf-8">
+        <!-- mobiilivaate jaoks-->
+        <meta name="viewport" content="width=device-width; initial-scale=1.0;maximum-scale=1.0"
+        <meta name="keywords" content="Lorem Ipsum,">
+        <!-- oluline SEO le u 150 tähemärki-->
+        <meta name="description" content="iquam lacus non nisl congue">
+        <!-- opngraph fb jaoks-->
+        <meta property="fb:app_id" content="30218446456,">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="http://koduleht.eu/article/latin.html">
+        <meta property="og:title" content="Lorem Ipsum,">
+        <meta property="og:description" content="Lorem Ipsum,">
+        <meta property="og:image" content="https://pilt"> 
+        <link rel="icon" href="favicons/favicon.ico" sizes="16x16">      
+        <link rel="stylesheet" href="../CSS/styles.css">
     </head>
     <body>
+        <video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg"
+        id="backvideo" autoplay muted loop playsinline>
+        <source src="http://thenewcode.com/assets/videos/polina.mp4">
+        </video>
             <!-- See osa ilmub ekraanile -->
             <header>
                 <noscript>
@@ -40,8 +58,9 @@
                     }}
                 </style>
                 <!-- blogipostitus vm jupp -->
-                <article>
-                    <h1>Tere  maailm! </h1>
+                <!-- scema jaoks-->
+                <article itamscope itemtype="http://schema.org/Article">
+                    <h1 itemprop="name">Tere  maailm! </h1>
                     <time datetime="2017-08-10">10-s august 2017 </time><br>
                     <span> Autor: </span><cite>Malle Tamm </cite> <br>
                     <blockquote style=" color: indigo">
@@ -49,7 +68,7 @@
                         <!-- tsitaadi allikas -->
                         <cite>Juku Tiik</cite>
                     </blockquote>
-                    <p>
+                    <p itemporop="description">
                         Lorem ipsum <!-- link definitsioonile --> <a href= "#def-firefox">Firefox </a> dolor sit amet, <q> Tsitaat </q>consectetur adipiscing elit. Suspendisse nibh sapien, placerat eu justo eget, mollis laoreet neque. Sed eu varius augue, nec interdum magna. Nam purus enim, efficitur a iaculis vitae, gravida elementum leo. Nulla ut dignissim metus. Vestibulum ultricies ante ornare augue.
                     </p>
                     <p>
