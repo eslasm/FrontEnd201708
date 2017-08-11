@@ -2,7 +2,47 @@ article {
     background-color: lightyellow;
     color: darkblue;
 }
+.definitsioon {
+    background-color: blue;
+}
 #def-firefox{
     border-style: solid;
     border-width: 1px;
+}
+[controls] {
+    border-style: dashed;
+    border-width: 3px;
+
+}
+nav a {
+    text-decoration: none;
+}
+nav ul {
+    list-style-type: none;
+}
+article p::first-letter {
+    font-size: 200%;
+}
+/*muudab selektsiooni värvi*/
+::-moz-selection, ::-ms-selection, ::-webkit-selection {
+    color: gold;
+    background: red;
+}
+::selection {
+    color: gold;
+    background: red;
+}
+/*linkide puhul*/
+a:visited {
+    color: lightgrey;
+}
+a:hover{
+    color: darkblue;
+}
+/*tabelis iga teine element on roosa, voib kasutada ka even voi odd*/
+tbody > tr:nth-child(2n+1){
+    background-color: pink!important;/*important - kasutada näiteks wordpressis üle kirjutades*/
+}
+blockquote {
+    color: brown!important;
 }
