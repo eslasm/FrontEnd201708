@@ -1,6 +1,12 @@
+@import url(<link href="https://fonts.googleapis.com/css?family=Indie+Flower">)
+article p{
+    font-family: 'Indie Flower';
+}
 article {
     background-color: lightyellow;
     color: darkblue;
+    width: 75%
+    
 }
 .definitsioon {
     background-color: blue;
@@ -8,10 +14,12 @@ article {
 #def-firefox{
     border-style: solid;
     border-width: 1px;
+    border-radius: 30.px 60.px;
 }
 [controls] {
     border-style: dashed;
     border-width: 3px;
+    
 
 }
 nav a {
@@ -45,4 +53,28 @@ tbody > tr:nth-child(2n+1){
 }
 blockquote {
     color: brown!important;
+}
+/*kasutatakse erinevate ekraanide jaoks*/
+@media screen and (min-width:800px){
+    html {
+        font-size: 200%;
+    }
+}
+h1{
+    font-size: 1.5em;
+}
+p{
+    font-size: 1em;
+}
+aside{
+    padding-left: 20%;
+    margin-left: 5%;
+    margin-top:0
+
+}
+Q{
+    background-color: lightblue;
+    width: 200px;
+    display: inline-block;
+    text-align: center
 }
