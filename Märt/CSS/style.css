@@ -10,6 +10,9 @@ article {
 }
 .definitsioon {
     background-color: lightskyblue;
+    border-style: solid;
+    border-color: darkblue;
+    border-width: 2px;
 }
 #def-firefox{
     border-style: solid;
@@ -76,8 +79,22 @@ aside{
     margin-left: 5%;
 }   
 q {
-    background-color: azure;
-    width: 300px;
+    background-color: lightblue;
+    width: 150px;
     display:inline-block;
     text-align: center;
+}
+dt {
+    font-family: 'Indie Flower', cursive;
+    background-color: lightblue;
+    width: 200px;
+    text-align: center;
+}
+#backvideo {
+    position: fixed;
+    z-index: -100;
+    min-width: 100%;
+    min-height: 100%;
+    background: url(http://thenewscode.com/assets/videos/polina.mp4);
+    background-size: cover;
 }
