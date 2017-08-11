@@ -5,7 +5,7 @@ article p{
 }
 
 article {
-    background-color: lightgoldenrodyellow;
+    background: rgba(54, 25, 25, .1);
     color : darkblue;
     width: 75%;
 }
@@ -76,7 +76,16 @@ aside{
     margin: 5%;
 }
 q {
+    width: 300px;
     background-color: azure;
     text-align: center;
     display: inline-block;
+}
+#backvideo {
+    position: fixed;
+    z-index: -100;
+    min-width: 100%;
+    min-height: 100%;
+    background: url(http://thenewcode.com/assets/videos/polina.jpg) no-repeat;
+    background-size: cover;
 }
