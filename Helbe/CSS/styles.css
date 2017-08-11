@@ -1,8 +1,88 @@
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower");
+article p {
+    font-family: 'Indie Flower';
+}
 article {
     background-color: lightyellow;
     color: darkblue;
+    width: 75%
+    
+}
+.definitsioon {
+    background-color: blue;
 }
 #def-firefox{
     border-style: solid;
     border-width: 1px;
+    border-radius: 30.px 60.px;
+}
+[controls] {
+    border-style: dashed;
+    border-width: 3px;
+    
+
+}
+nav a {
+    text-decoration: none;
+}
+nav ul {
+    list-style-type: none;
+}
+article p::first-letter {
+    font-size: 200%;
+}
+/*muudab selektsiooni värvi*/
+::-moz-selection, ::-ms-selection, ::-webkit-selection {
+    color: gold;
+    background: red;
+}
+::selection {
+    color: gold;
+    background: red;
+}
+/*linkide puhul*/
+a:visited {
+    color: lightgrey;
+}
+a:hover{
+    color: darkblue;
+}
+/*tabelis iga teine element on roosa, voib kasutada ka even voi odd*/
+tbody > tr:nth-child(2n+1){
+    background-color: pink!important;/*important - kasutada näiteks wordpressis üle kirjutades*/
+}
+blockquote {
+    color: brown!important;
+}
+/*kasutatakse erinevate ekraanide jaoks*/
+@media screen and (min-width:800px){
+    html {
+        font-size: 200%;
+    }
+}
+h1{
+    font-size: 1.5em;
+}
+p{
+    font-size: 1em;
+}
+aside{
+    padding-left: 20%;
+    margin-left: 5%;
+    margin-top:0
+
+}
+Q{
+    background-color: lightblue;
+    width: 200px;
+    display: inline-block;
+    text-align: center
+}
+#backvideo {
+    position: fixed;
+    z-index: -100;
+    min-width: 100%;
+    background: url (http://thenewcode.com/assets/images.polina.jpg)
+    background-size: cover;
+
 }
