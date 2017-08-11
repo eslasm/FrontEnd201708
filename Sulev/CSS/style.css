@@ -2,7 +2,48 @@ article {
     background-color: lightgoldenrodyellow;
     color : darkblue;
 }
+.definitsioon {
+    background-color: lightskyblue;
+}
 #def-firefox{
     border-style: solid;
     border-width: 1px;
+}
+[controls] {
+    border-style: dashed;
+    border-width: 3px;
+}
+nav a {
+    text-decoration: none;
+    font: small-caption;
+}
+nav a::before {
+    content: "→";
+}
+nav a:hover{
+    color: black;
+}
+/* Kommentaar */
+nav ul {
+    list-style-type: none;
+}
+article p::first-letter {
+    font-size: 200%;
+}
+::-moz-selection {
+  color: gold;
+  background: palevioletred;
+}
+::selection {
+  color: gold;
+  background: palevioletred;
+}
+a:visited {
+    color: darkcyan;
+}
+tbody > tr:nth-child(-n+4) {
+    color: violet!important;
+}
+blockquote {
+    color: wheat!important;
 }
