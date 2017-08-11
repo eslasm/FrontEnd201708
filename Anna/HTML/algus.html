@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html prefix="og: http://ogp.me/ns#" lang="et">
     <head>
         <!-- Päis (head) ei ilmu otseselt erkaanile -->
         <meta charset="utf-8">
-        <title>Ilmub veebilehitseja ribal</title>
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+        <!-- SEO hea märk on kuuesõnaline title -->
+        <title>Lorem ipsum dolor sit amet</title>
+        <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+        <meta name="keywords" content="Lorem Ipsum">
+        <meta property="fb:app_id" content="302184056577324">
+        <!-- opengraph -->
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="http://koduleht.eu/article/latin.html">
+        <meta property="og:title" content="Lorem ipsum dolor sit amet">
+        <meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+        <meta property="og:image" content="http://www.piperstreetvet.com.au/wp-content/uploads/2015/11/puppy.jpg">
+        <link rel="icon" href="favicon/favicon.ico" sizes="16x16">
         <link rel="stylesheet" href="../CSS/style.css">
     </head>
     <body>
+        <video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg"
+        id="backvideo" autoplay muted loop playsinline>
+        <source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
+        </video>
         <!-- See osa ilmub ekraanile aga mitte kommentaar -->
         <header>
             <a href="/">
@@ -26,15 +42,15 @@
             </nav>
         </header>
         <main>
-            <article>
-                <h1>Lorem Ipsum</h1>
-                <spam>Autor: </spam><cite>Malle Tamm</cite><br>
-                <time datetime="2017-08-15">15.august 2017</time>
+            <article itemscope itemtype="http://schema.org/Article">
+                <h1 itemprop="name">Lorem Ipsum</h1>
+                <spam>Autor: </spam><cite itemprop="author">Malle Tamm</cite><br>
+                <time datetime="2017-08-15" itemprop="datePublished">15.august 2017</time>
                 <blockquote>
                     "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
                 <cite>Juku Tiik</cite>
                 </blockquote>
-                <p>
+                <p itemprop="description">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, <q>Tsitaat... </q> do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <a href="#def-firefox">Firefox</a> culpa qui officia deserunt mollit anim id est laborum.
                 </p>
                 <p>
@@ -79,12 +95,6 @@
                             <th>Hind</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>Mass</th>
-                            <th>Hind</th>
-                        </tr>
-                    </tfoot>
                     <tbody>
                         <tr>
                             <td>79 kg</td>
@@ -93,6 +103,14 @@
                         <tr>
                             <td>64 kg</td>
                             <td>200 £</td>
+                        </tr>
+                        <tr>
+                            <td>80 kg</td>
+                            <td>350 £</td>
+                        </tr>
+                        <tr>
+                            <td>72 kg</td>
+                            <td>210 £</td>
                         </tr>
                     </tbody>
                 </table>
