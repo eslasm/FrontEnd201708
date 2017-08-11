@@ -11,3 +11,39 @@ article {
 aside {
     background:#cef;
 }
+
+.preklass {
+    background:orange;
+}
+
+[controls] {
+
+}
+
+header li {
+    text-decoration: none;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+article p::first-letter {
+    color:red;
+}
+
+::selection {
+    background:purple;
+}
+
+a:hover {
+    color:red;
+}
+
+tr:nth-child(even) {
+    background:gray;
+}
+
+span::before {
+    margin-left:5px;
+}
