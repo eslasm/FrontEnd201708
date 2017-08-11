@@ -1,12 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="et">
     <head>
         <!-- Kommentaar -->
         <meta charset="UTF-8">
-        <title>Algus</title>
+        <meta name="keywords" content="Lorem Ipsum">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+
+        <!-- opengraph -->
+        <meta propety="fb:app_id" content="34325235234">
+        <meta propety="og:type" content="article">
+        <meta propety="og:url" content="http://koduleht.eu/article/latin.html">
+        <meta propety="og:title" content="Lorem Ipsum Consieuteur">
+
+
+        
+        <title>Lorem ipsum dolor sit amet consectuetur</title>
+
+        <link rel="icon" href="favicons/favicons.ico" sizes="16x16">
         <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
+
+        <video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="backvideo" autoplay muted loop playsinline>
+            <source src="http://thenewcode.com/assets/videos/polina.mp4" type "video/mp4">
+        </video>
+
+
+
+<i class="fa fa-envelope-o" aria-hidden="true">&nbsp;&nbsp;&nbsp;rene.reede@gmail.com</i><br><br>
+<i class="fa fa-phone" aria-hidden="true"><span>&nbsp;&nbsp;&nbsp;+372 534543795</span></i>
+
         <header>
 
             <a href="/">
@@ -22,10 +47,10 @@
             </nav>
         </header>
          <main>
-            <article>
-                    <h1>Lorem Ipsum</h1>
+            <article itemscope itemtype="http://schema.org/article">
+                    <h1 itemprop="name">Lorem Ipsum</h1>
                 <span>Autor:</span><cite>Malle Tamm</cite>
-                <time datetime="2017-08-15">15-s august 2017</time>
+                <time datetime="2017-08-15" itemprop="datePublished">15-s august 2017</time>
                 <blockquote>
                     <a href="#coffe">Coffe</a> ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel dolor cursus, consequat lacus in, fermentum elit. Phasellus con
                     sectetur felis feugiat, laoreet nulla eu, lacinia ligula. Vestibulum fermentum orci mauris, id sollicitudin lorem aliquam ac. Qu
@@ -36,7 +61,7 @@
                     <cite>Juku Tiik</cite>
                 </blockquote>
              
-                <p>Lorem ipsum dolor sit amet, <abbr title="ECMASCRIPT 6">JavaScript</abbr> adipiscing elit. <q>yes</q> sed arcu ut mauris aliquam dictum nec id quam. Curabitur at lectus at elit ultrices auctor. Etiam dictum facilisis ante, et lobortis tellus rhoncus ac. Suspendisse pellentesque fringilla dignissim. Nullam et quam vitae ante sodales finibus ac eget ipsum. Aliquam vel mattis magna. Nunc sed fermentum justo. Donec id semper lacus. Donec ultricies, eros vel luctus lacinia, orci ipsum sollicitudin justo, quis efficitur urna eros sed ligula. Sed eu risus eu eros porta ornare. Curabitur aliquet ligula nec dignissim porttitor. Donec tempus arcu ex, ac blandit nulla interdum eu. Phasellus luctus lorem hendrerit, dapibus ex non, cursus ligula. Fusce vel tincidunt nibh, non consequat risus. Vivamus lorem purus, tincidunt eu felis non, fermentum euismod lorem. Nunc quis tempus dolor, ut auctor velit.
+                <p itemprop="description">Lorem ipsum dolor sit amet, <abbr title="ECMASCRIPT 6">JavaScript</abbr> adipiscing elit. <q>yes<span></span></q> sed arcu ut mauris aliquam dictum nec id quam. Curabitur at lectus at elit ultrices auctor. Etiam dictum facilisis ante, et lobortis tellus rhoncus ac. Suspendisse pellentesque fringilla dignissim. Nullam et quam vitae ante sodales finibus ac eget ipsum. Aliquam vel mattis magna. Nunc sed fermentum justo. Donec id semper lacus. Donec ultricies, eros vel luctus lacinia, orci ipsum sollicitudin justo, quis efficitur urna eros sed ligula. Sed eu risus eu eros porta ornare. Curabitur aliquet ligula nec dignissim porttitor. Donec tempus arcu ex, ac blandit nulla interdum eu. Phasellus luctus lorem hendrerit, dapibus ex non, cursus ligula. Fusce vel tincidunt nibh, non consequat risus. Vivamus lorem purus, tincidunt eu felis non, fermentum euismod lorem. Nunc quis tempus dolor, ut auctor velit.
                 </p>
                 <hr>
 
@@ -94,12 +119,21 @@
                             <td>64kg</td>
                              <td>200£</td>
                         </tr>
+                         <tr>
+                            <td>49kg</td>
+                            <td>230£</td>
+                        </tr>
+
+                        <tr>
+                            <td>34kg</td>
+                             <td>436£</td>
+                        </tr>
                     </tbody>
                 </table>
 
 
 
-                <pre>
+                <pre class="preklass">
                     Tere Jimi!
                     Tere John!
                     Tere       Spongebob
