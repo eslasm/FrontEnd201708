@@ -2,7 +2,45 @@ article {
     background-color:lightgoldenrodyellow;
     color: darkblue;
 }
-#def-firefox{
+.definitsioon {
+    background-color: lightskyblue;
+}
+#def-firefox {
     border-style: solid;
     border-width: 1px;
 }
+[controls] {
+    border-style: dashed;
+    border-width: 3pw;
+}
+nav a {
+    text-decoration: none;
+}
+nav a::before {
+    content: ".";
+}
+/* tere kommentaar */
+nav ul {
+    list-style-type: none;
+}
+article p::first-letter {
+    font-size: 200%;
+}
+::-moz-selection, ::-ms-selection, ::-webkit-selection {
+  color: gold;
+  background: red;
+}
+::selection {
+  color: gold;
+  background: red;
+}
+a:visited {
+  color: aqua;
+}
+a:hover {
+  color: darkblue;
+}
+tbody > tr:nth-child(2n+1){
+    background-color: pink;
+}
+/* võib olla ka (even) või (odd) */
