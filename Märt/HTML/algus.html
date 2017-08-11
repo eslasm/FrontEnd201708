@@ -1,19 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html prefix="og: http://ogp.me/ns#" lang="et">
     <head>
         <!-- Päis (head) ei ilmu otseselt ekraanile-->
         <meta charset="utf-8">
-        <title>Ilmub veebilehetseja ribal</title>
+        <!-- mobiilivaade oleks ok-->
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0">
+        <!-- SEO hea kuue sõnaline title-->
+        <title>Lorem dolor ipsum sit amet</title>
+        <!-- SEO umbes 155 tähemärki-->
+        <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non nisl tristique, iaculis tortor vulputate, gravida dui. Integer id porttitor sapien, eu placerat urna.">
+        <meta name="keywords" content="Lorem Ipsum">
+
+        <meta property="fb:app_id" content="1536748930298384">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="http://koduleht.eu/article/latin.html">
+        <meta property="og:title" content="Lorem ipsum dolor ipsum sit amet">
+        <meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non nisl tristique, iaculis tortor vulputate, gravida dui. Integer id porttitor sapien, eu placerat urna.">
+        <meta property="og:image" content="https://media.licdn.com/media/p/6/005/091/251/0167361.png">
+        
+        <link rel="icon" href="favicons/favicon.ico" sizes="16x16">
         <link rel="stylesheet" href="../CSS/style.css">
-   
+    </head>
     <body>
+        <video poster="http://s3-us-west-2.amasonaws.com/s.cdpn.io/4273/polina.jpg"
+        id= "backvideo" autoplay muted loop playsinline>
+        <source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
+            </video>
         <!-- See osa ilmub ektraanile aga mitte kommentaar-->
         <header>
              <noscript>
                Palun aktiveeri jacascript!
             </noscript>
             <a href="/">
-            <img src="https://media.licdn.com/media/p/6/005/091/251/0167361.png" height="100" alt="TudengTV logo">
+            <img src="https://media.licdn.com/media/p/6/005/091/251/0167361.png" height="150" alt="TudengTV logo">
             </a>
         
             <nav>
@@ -40,18 +59,19 @@
             </style>    
             
                 
-            <article>
-                   <h1>Lorem Ipsum</h1>
-                   <span>Autor: </span><cite>Malle Tamm</cite><br>
-                   <Time datetime="2017-08-10">15-s august 2017</time>
-                   
-                   <blockquote>
+            <article itemscope itemtype="http://schema.org/Article">
+                   <h1 itemprop="name">Lorem Ipsum Ööbik</h1>
+                   <span>Autor: </span><cite itemprop="author">Malle Tamm</cite><br>
+                   <Time datetime="2017-08-10" itemprop="datePublished">15-s august 2017</time>
+                   <!-- html-is ei ole mõtet teksti värvi muuta-->
+                   <blockquote style="color:indigo">
                        Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
                        <cite>Juku Tiik</cite>
                    </blockquote>    
                    
                    
-                   <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <q>Tsitaat... </q> Phasellus non nisl tristique, iaculis tortor vulputate, gravida dui. Integer id porttitor sapien, eu placerat urna. Vestibulum id felis quis <a href="#def-firefox">Firefox</a>
+                   <p itemprop="description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <q>Tsitaat...</q> Phasellus non nisl tristique, iaculis tortor vulputate, gravida dui. Integer id porttitor sapien, eu placerat urna. Vestibulum id felis quis <a href="#def-firefox">Firefox</a>
                      quam ullamcorper sodales. Donec dapibus, neque a ornare aliquam, eros nibh dignissim ante, sit amet pellentesque felis orci ac est. Mauris nulla justo, dignissim et vehicula auctor, viverra ut est. Morbi aliquet aliquam dolor a mattis. Phasellus ultricies orci nec fringilla gravida. Maecenas id fermentum ligula. Aliquam vitae magna vitae eros bibendum ullamcorper eu vulputate enim. Nullam vitae molestie tellus. Nulla erat est, imperdiet sed justo sollicitudin, pulvinar faucibus mi. Quisque dapibus erat et tellus consequat, et venenatis mi faucibus. Pellentesque volutpat magna id magna ultricies vulputate. Nunc nec eros cursus, tincidunt turpis et, semper odio. Etiam massa turpis, consequat nec venenatis vitae, molestie sit amet diam.
                    </p>
                    <p> Etiam dictum congue lacus, et consequat lorem malesuada nec. Quisque scelerisque felis dolor, quis fermentum magna condimentum vel. Pellentesque ullamcorper, nulla vitae tincidunt lobortis, elit lectus pretium enim, quis sollicitudin sem orci quis justo. Vivamus egestas malesuada malesuada. Vivamus in rhoncus lectus. Pellentesque tristique sapien cursus erat sodales consectetur. Pellentesque volutpat pulvinar nulla, eget laoreet purus facilisis aliquam. Vivamus dapibus a diam sit amet faucibus. Donec varius elementum nisl placerat tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam magna purus, facilisis ut mi sit amet, gravida gravida nulla. Aliquam feugiat risus ac finibus pulvinar. Pellentesque at iaculis felis. Curabitur consectetur odio a risus vestibulum tempor. Aenean dictum venenatis dui non varius. Ut est lectus, pharetra ut fringilla et, scelerisque ut est.
@@ -132,16 +152,25 @@
                            <tr> 
                                <td>64kg</td>
                                <td>200€</td>
-                           </tr>    
+                           </tr> 
+                            <tr>
+                               <td>56kg</td>
+                               <td>450€</td>
+                           
+                           </tr>
+                           <tr> 
+                               <td>73kg</td>
+                               <td>400€</td>
+                           </tr>       
                             </tbody>
 
                    </table>     
         
-                   <pre>
+                   <pre class="definitsioon">
 Tere Juku!
                        Tere Malle!
 Tere Palk!
-                   </pre>  
+                   </pre class="definitsioon">  
 
                    <!-- dfn teksti sisestamiseks kasutuseks sarnaselt <q>-le -->
                    <dl>
