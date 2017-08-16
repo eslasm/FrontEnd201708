@@ -1,0 +1,25 @@
+{
+  "name": "front-end-2017-08",
+  "version": "1.0.0",
+  "description": "Frontend",
+  "main": "index.js",
+  "scripts": {
+    "lite": "lite-server -port 3000",
+    "start": "npm run lite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rensaa/FrontEnd201708.git"
+  },
+  "dependencies": {
+    "lite-server": "2.3.0",
+    "bootstrap-v4-dev": "4.0.0-alpha.6"
+  },
+  "devDependecies": {},
+  "author": "Rene",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rensaa/FrontEnd201708/issues"
+  },
+  "homepage": "https://github.com/Rensaa/FrontEnd201708#readme"
+}

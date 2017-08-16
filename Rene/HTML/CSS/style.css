@@ -109,7 +109,7 @@ header a {
     text-align:center;
 }
 
-header a > img, header > nav li > article {
+header a > img, header > nav li > article, video {
     margin-left:auto;
     margin-right:auto;
     display:block;
@@ -126,4 +126,44 @@ table {
 
 #story > table {
     max-width:50%;
+}
+
+p {
+    color:black;
+}
+
+/* Button */
+
+nav li {
+    background:#3498db;
+    padding:10px;
+    margin-top:5px;
+    margin-bottom:5px;
+    border-radius:5px;
+    width:100px;
+    box-shadow: 10px 10px 5px black;}
+
+nav a,nav:visited, nav a:hover {
+    text-decoration:none;
+    color:whitesmoke;
+
+}
+
+nav li:hover {
+    background:#ecbf0bd;
+}
+
+img:hover {
+    animation: img_scale 2s ;
+}
+
+@keyframes img_scale {
+    from {
+        transform: scale(1,1);
+
+    }
+
+    to {
+        transform:scale(1.2,1.2)
+    }
 }
