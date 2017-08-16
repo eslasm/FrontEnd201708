@@ -1,15 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 
-header a > img, article, video {
+header a > img, article, video{
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-header li, footer, figcaption{
+header li, footer, figcaption, nav ul{
     text-align: center;
 }
-
-
 p{
     font-family: 'Indie Flower', cursive;
 }
@@ -17,8 +15,6 @@ article {
     background-color: lightgoldenrodyellow;
     color: blue;
     width: 75%;
-   
-    
 }
 .definitsioon {
     background-color: lightskyblue;
@@ -100,6 +96,10 @@ q {
     width: 150px;
     display:inline-block;
     text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    border-color: darkblue;
+    border-radius: 40px 40px;
 }
 dt {
     font-family: 'Indie Flower', cursive;
@@ -131,3 +131,46 @@ dt {
 #story > table {
     min-width: 45%;
 }
+/* Button*/
+nav li {
+    display: inline-table;
+    width: 100px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 30px;
+    background-color: blue;
+    box-shadow: 3px 3px 5px black;
+}
+nav a, nav a:visited, nav a:hover{
+    text-decoration: none;
+    color: whitesmoke;
+            
+}
+nav li:hover {
+    
+    background: #3cb0fd;
+    box-shadow: 1px 1px 5px black;
+    transform: translate(2px, 2px);
+    transition: transform 0,3s;
+
+}
+@keyframes img_scale{
+    from {
+        transform: scale(1, 1);
+    }
+    to{
+        transform: scale(1.2, 1.2);
+    }
+}
+img{
+    transition: transform 2s;
+    transition-timing-function: 
+}
+img:hover{
+     transform: scale(1.2, 1.2);
+     transition: transform 2s;
+}
+   /* transform: scale(1.2, 1.2);
+    sekundid kaua pilt liigub
+    transition: transform 2s;*/
+    
