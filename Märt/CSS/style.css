@@ -134,7 +134,7 @@ dt {
 /* Button*/
 nav li {
     display: inline-table;
-    width: 100px;
+    width: 50px;
     padding: 10px;
     margin: 10px;
     border-radius: 30px;
