@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 
+header a {
+    display: block;
+    width: auto;
+}
+header a > img, article, video{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+header li, address, figcaption{
+    text-align: center;
+}
+
 article p{
     font-family: 'Lobster', cursive;
 }
@@ -8,6 +21,7 @@ article {
     background: rgba(54, 25, 25, .1);
     color : darkblue;
     width: 75%;
+    
 }
 .definitsioon {
     background-color: lightskyblue;
@@ -55,6 +69,10 @@ tbody > tr:nth-child(-n+4) {
 blockquote {
     color: wheat!important;
 }
+hr{
+    height: 0;
+    flex-basis: 90%!important;
+}
 @media screen 
     and (min-width: 320px) 
     and (max-width: 480px) {
@@ -72,8 +90,10 @@ blockquote {
     html{ font-size: 16pt;}
 }
 aside{
-    padding-left: 10%;
-    margin: 5%;
+    ma
+    padding-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 q {
     width: 300px;
@@ -88,4 +108,19 @@ q {
     min-height: 100%;
     background: url(http://thenewcode.com/assets/videos/polina.jpg) no-repeat;
     background-size: cover;
+}
+/*Flex*/
+#story{
+    display: flex;
+    flex-wrap: wrap;
+}
+#story > *{
+    flex: 1 0 45%;
+    margin: 10px;
+}
+#story > .header{
+    flex: 0 1 90%;
+}
+#data > table {
+    min-width: 45%;
 }
