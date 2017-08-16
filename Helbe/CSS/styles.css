@@ -2,7 +2,7 @@
 header a{
     display: block;
 }
-header a > img, article, video {
+header a > img, nav li, article, video {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -52,12 +52,10 @@ article p::first-letter {
     background: red;
 }
 /*linkide puhul*/
-a:visited {
-    color: lightgrey;
+/*nav a, nav a:visited, nav a:hover {
+    color: lightgrey;*/
 }
-a:hover{
-    color: darkblue;
-}
+
 /*tabelis iga teine element on roosa, voib kasutada ka even voi odd*/
 tbody > tr:nth-child(2n+1){
     background-color: pink!important;/*important - kasutada näiteks wordpressis üle kirjutades*/
@@ -117,4 +115,48 @@ Q{
 }
 #story > table{
     min-width: 45%;
+}
+/*button*/
+
+nav li{
+    width: 200px;
+    padding: 5px;
+    /*margin: 10px auto;*/
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 25px; /* teeb ümaraks otsad*/
+    background: #3498db;
+    box-shadow: 3px 3px 5px darkblue;
+}
+nav a, nav a:visited, nav a:hover {
+    text-decoration: none;
+    color: whitesmoke
+}
+nav li:hover{ 
+    background: #3cb0fd;
+    box-shadow: 3px 3px 5px darkblue; 
+    transform: translate(3px, 2px); /*liigutab nuppe*/
+    transition: transform 0.5s;      
+}
+/*
+@keyframes img_scale{
+    from{
+        transform: scale (1, 1)
+    }
+    to{
+        transform: scale (1.2, 1.2)
+    }
+}
+
+img:hover{
+    animation: img_scale 2s forwards;
+}
+*/
+img{
+    transition: transform 2s;
+    transition-timing-function: linear;
+}
+img:hover{
+   transform: scale(1.2, 1.2);/*pilt läheb suuremaks hoveri ajal*/
+    transition: transform 2s;/* aeg 2 sek*/ 
 }
