@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 
+header a > img, article, video {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+header li, footer, figcaption{
+    text-align: center;
+}
+
+
 p{
     font-family: 'Indie Flower', cursive;
 }
@@ -7,6 +17,8 @@ article {
     background-color: lightgoldenrodyellow;
     color: blue;
     width: 75%;
+   
+    
 }
 .definitsioon {
     background-color: lightskyblue;
@@ -57,6 +69,10 @@ tbody > tr:nth-child(0n+3) {
 blockquote {
     color: saddlebrown!important;
 }
+hr {
+    height: 0;
+    flex-basis:  90%!important;
+}
 @media screen and (min-width:800px) {
     html {
         font-size: 150%;
@@ -76,7 +92,8 @@ blockquote {
 aside{
     margin-right: 0%;
     padding-top: 5%;
-    margin-left: 5%;
+    margin-left: 0%;
+    margin-right: 0%;
 }   
 q {
     background-color: lightblue;
@@ -97,4 +114,20 @@ dt {
     min-height: 100%;
     background: url(http://thenewscode.com/assets/videos/polina.mp4);
     background-size: cover;
+}
+/*Flex*/
+#story{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+#story > * {
+    flex: 1 0 45%;
+    margin: 10px;
+}
+#story > .header{
+    flex: 0 1 90%;
+}
+#story > table {
+    min-width: 45%;
 }
