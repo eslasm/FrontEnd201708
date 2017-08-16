@@ -86,10 +86,11 @@ aside{
     margin-right: 5%;
 }
 q {
-    width: 300px;
+    width: 100px;
     background-color: azure;
     text-align: center;
     display: inline-block;
+    border-radius: 20px;
 }
 #backvideo {
     position: fixed;
@@ -110,6 +111,9 @@ q {
 }
 #story > .header{
     flex: 0 1 90%;
+}
+table{
+    text-align: center;
 }
 #story > table {
     min-width: 45%;
