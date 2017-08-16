@@ -4,7 +4,7 @@ header a > img, article, video {
     margin-left: auto;
     margin-right: auto;
 }
-header li, address, figcaption{
+header li, address, figcaption, nav ul{
     text-align: center;
 }
 article p{
@@ -119,3 +119,43 @@ q {
 #story > table {
     min-width: 45%;
 }
+/* Button */
+nav li {
+    display: inline-block;
+    width: 100px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 25px;
+    background: #3498db;
+    box-shadow: 3px 3px 5px black;
+}
+nav a, nav a:visited, nav a:hover{
+    text-decoration: none;
+    color: whitesmoke;
+}
+nav li:hover {
+    background: #3cb0fd;
+    box-shadow: 1px 1px 5px black;
+    transform: translate(2px, 2px);
+}
+img{
+    transition: transform 2s;
+    transition-timing-function: linear;
+}
+img:hover{
+    transform: scale(1.2, 1.2);
+    transition: transform 2s;
+}
+/*
+@keyframes img_scale{
+    from {
+        transform: scale(1, 1);
+    }
+    to {
+        transform: scale(1.2, 1.2);
+    }
+}
+img:hover{
+    animation: img_scale 2s forwards;
+}
+*/
