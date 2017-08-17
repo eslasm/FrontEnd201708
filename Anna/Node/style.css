@@ -1,6 +1,6 @@
 .container, .container-fluid{
-    /*height: 100px;*/
-    background: salmon;
+   /*height: 100px;*/
+   background: salmon; 
 }
 .container-fluid > .container{
     height: 30px;
@@ -9,12 +9,8 @@
 .cookies{
     text-align: center;
 }
-#carouselExampleSlidesOnly{
+#carouselExampleControls{
     margin-left: auto;
     margin-right: auto;
     width: 640px;
-}
-#carouselExampleSlidesOnly img{
-    width: 640px;
-    height: 320px;
 }
