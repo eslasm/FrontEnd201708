@@ -1,6 +1,5 @@
 .container, .container-fluid {
-    background:salmon;
-    height:100px;
+    background:lightgray;
 }
 
 .container > .container {
