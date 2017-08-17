@@ -1,10 +1,10 @@
 'use strict';
 // alert("Tere");
 let i: number = 0;
-do{
+/* do{
     i++;
     console.log('Tere tulemast!' + ' ' + i);
-}while(i<5)
+}while(i<5) */
 // muutujad ja tyybid;
 const kasOnMuutmatu = true;
 let kasOnMuudetav = true;
@@ -46,3 +46,38 @@ console.log(arv);
 s6na += ' sõna';
 s6na += ` arv: ${arv}.`;
 console.log(s6na);
+
+/* Tingimus laused */
+s6na = arv === 100 ? 'Tere' : 'Head aega';
+console.log(s6na);
+if(arv === 100){
+    s6na = 'Tere2';
+}else if(arv < 100){
+    s6na = 'Headaega2';
+}else{
+    s6na = 'Meh';
+}
+switch(arv){
+    case 100:
+        s6na = 'Tere3';
+        break;
+    case 102:
+        s6na = 'Ter3';
+        break;
+    case 90:
+        s6na = 'T3';
+        break;
+    default:
+        s6na = '...';
+}
+
+/* Tsüklid */
+for(let i = 0; i < 5; i++){
+    console.log ("Väärtus = " + i);
+}
+arv = 0;
+while(arv <= 10){
+    arv++;
+}
+
+/* Funktsioonid */
