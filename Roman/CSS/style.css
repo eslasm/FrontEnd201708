@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+header a > img, article, video {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+header li, address, figcaption, nav ul{
+    text-align: center;
+}
+article p{
+    font-family: 'Indie Flower', cursive;
+}
+article {
+    background-color: lightgoldenrodyellow;
+    color: darkgoldenrod;
+    width: 75%;
+    
+}
+.definitsioon {
+    background-color: lightskyblue;
+}
+#def-firefox {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px 20px;
+}
+[controls] {
+    border-style: dashed;
+    border-width: 3px;
+}
+nav a {
+    text-decoration: none;
+}
+nav a::before {
+    content: "→ ";
+}
+/* Tere kommentaar */
+nav ul {
+    list-style-type: none;
+}
+article p::first-letter {
+    font-size: 2em;
+}
+::-moz-selection, ::-ms-selection, ::-webkit-selection {
+    color: gold;
+    background: red;
+}
+::selection {
+    color: gold;
+    background: red;
+}
+a:visited {
+    color: aqua;
+}
+a:hover {
+    color: darkblue;
+}
+/* Võib olla ka (even) või (odd) */
+tbody > tr:nth-child(2n+1) {
+    background-color: pink!important;
+}
+blockquote {
+    color: saddlebrown!important;
+}
+hr {
+    height: 0;
+    flex-basis: 90%!important;
+}
+
+@media screen and (min-width:800px) {
+    html {
+        /*font-size: 200%;*/
+        font-size: 16px;
+    }
+    h1{
+        font-size: 1.5em;
+    }
+    p{
+        font-size: 1em;
+    }
+}
+@media print {
+    html{
+        font-size: 16pt;
+    }
+}
+aside{
+    margin-right: 0;
+    padding-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+q {
+    background-color: azure;
+    width: 300px;
+    display: inline-block;
+    text-align: center;
+}
+#backvideo {
+    position: fixed;
+    z-index: -100;
+    min-width: 100%;
+    min-height: 100%;
+    background: url(http://thenewcode.com/assets/images/polina.jpg) no-repeat;
+    background-size: cover;
+}
+/*Flex*/
+#story{
+    display: flex;
+    flex-wrap: wrap;
+}
+#story > * {
+    flex: 1 0 45%;
+    margin: 10px;
+}
+#story > .header{
+    flex: 0 1 90%;
+}
+#story > table {
+    min-width: 45%;
+}
+/* Button */
+nav li {
+    display: inline-block;
+    width: 100px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 25px;
+    background: #3498db;
+    box-shadow: 3px 3px 5px black;
+}
+nav a, nav a:visited, nav a:hover{
+    text-decoration: none;
+    color: whitesmoke;
+}
+nav li:hover {
+    background: #3cb0fd;
+    box-shadow: 1px 1px 5px black;
+    transform: translate(2px, 2px);
+}
+img{
+    transition: transform 2s;
+    transition-timing-function: linear;
+}
+img:hover{
+    transform: scale(1.2, 1.2);
+    transition: transform 2s;
+}
+/*
+@keyframes img_scale{
+    from {
+        transform: scale(1, 1);
+    }
+    to {
+        transform: scale(1.2, 1.2);
+    }
+}
+img:hover{
+    animation: img_scale 2s forwards;
+}
+*/

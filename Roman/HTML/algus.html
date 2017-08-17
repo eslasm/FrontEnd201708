@@ -1,11 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html prefix="og: http://ogp.me/ns#" lang="et">
     <head>
         <!-- Päis (head) ei ilmu otseselt ekraanile -->
         <meta charset="utf-8">
-        <title>Ilmub veebilehitseja ribal</title>
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+        <!-- SEO hea märk on kuue sõnaline title-->
+        <title>Lorem ipsum dolor sit amet consectetur</title>
+        <!-- SEO umbes 155 tähemärki. -->
+        <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor, massa sed sollicitudin dictum.">
+        <meta name="keywords" content="Lorem Ipsum">
+
+        <!-- opengraph -->
+        <meta property="fb:app_id" content="302184056577324">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="http://koduleht.eu/article/latin.html">
+        <meta property="og:title" content="Lorem ipsum dolor sit amet consectetur">
+        <meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor, massa sed sollicitudin dictum.">
+        <meta property="og:image" content="https://s-static.ak.fbcdn.net/images/devsite/attachment_blank.png">
+
+        <link rel="icon" href="favicons/favicon.ico" sizes="16x16">
+        <link rel="stylesheet" href="../CSS/style.css">
     </head>
     <body>
+        <video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg"
+        id="backvideo" autoplay muted loop playsinline>
+            <source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
+        </video>
         <!-- See osa ilmub ekraanile aga mitte kommentaar -->
         <header>
             <noscript>
@@ -29,15 +49,17 @@
             </nav>
         </header>
         <main>
-            <article>
-                    <h1>Lorem Ipsum</h1>
-                    <span>Autor: </span><cite>Malle Tamm</cite><br>
-                    <time datetime="2017-08-15">15-s august 2017</time>
-                    <blockquote>
-                        Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
-                        <cite> Juku Tiik</cite>
-                    </blockquote>
-                    <p>
+            <article id="story" itemscope itemtype="http://schema.org/Article">
+                    <section class="header">
+                        <h1 itemprop="name">Lorem Ipsum Ööbik </h1>
+                        <span>Autor: </span><cite itemprop="author">Malle Tamm</cite><br>
+                        <time datetime="2017-08-15" itemprop="datePublished">15-s august 2017</time>
+                        <blockquote style="color:indigo">
+                            Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+                            <cite> Juku Tiik</cite>
+                        </blockquote>
+                    </section>
+                    <p itemprop="description">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. <q>Tsitaat... </q> Maecenas tempor, massa sed sollicitudin dictum, lacus mauris laoreet lorem, in posuere lorem nisi quis <a href="#def-firefox">Firefox</a>. Aliquam vel convallis tellus, vitae sodales libero. Cras in velit tortor. Donec id fermentum libero. Duis vel volutpat metus. Quisque in lorem sit amet libero pharetra fringilla sit amet sed nisi. Suspendisse sed lobortis lacus, at dapibus tellus. Duis auctor ex odio. Pellentesque accumsan est at suscipit ultricies. Suspendisse ullamcorper, leo eu accumsan pharetra, diam libero condimentum leo, non tristique mi arcu id enim. Pellentesque ullamcorper lorem justo. Ut eget sagittis nisi. Vestibulum sodales dictum nibh, quis facilisis arcu. Etiam vulputate sed ligula a dignissim. Proin risus justo, commodo vitae malesuada sit amet, accumsan ac risus. Phasellus convallis tortor ut sapien ullamcorper porttitor consequat gravida augue. 
                     </p>
                     <p>
@@ -51,46 +73,49 @@
                             Maecenas commodo nisl in odio iaculis consequat. Cras vel augue a est luctus posuere ut ut orci. Aliquam finibus congue pellentesque. In fringilla dapibus ligula vitae mattis. Suspendisse tempor eros vel dui consectetur pretium. Nunc lobortis, neque ac ultricies viverra, tortor ipsum dignissim ligula, commodo faucibus nulla dui quis turpis. Sed id turpis lectus. Suspendisse et quam arcu. Nam et scelerisque dolor. Donec sed erat leo. Morbi scelerisque odio id ex porta, vitae volutpat nunc gravida. Curabitur eros erat, bibendum et enim sit amet, lobortis venenatis leo. Sed elementum augue est, volutpat eleifend lectus finibus sed. Vivamus finibus tellus vel urna condimentum, non luctus nunc varius. 
                     </p>
                     <iframe width="640" height="360" src="https://www.youtube.com/embed/5dsGWM5XGdg?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=0" frameborder="0" allowfullscreen></iframe>
-                    <h4> Tulemused: </h4>
-                    <ol>
-                        <li>Juku Tiik</li>
-                        <li>Malle Tamm</li>
-                        <li>Raiko Selge</li>
-                    </ol>
-                    <ul>
-                        <li>
-                            <strong><code>&lt;strong&gt;</code></strong> 
-                            on parem kui <code>&lt;b&gt;</code>
-                        </li>
-                        <li>
-                            <em><code>&lt;em&gt;</code></em> 
-                            on parem kui <code>&lt;i&gt;</code>
-                        </li>
-                        <li>
-                            <mark><code>&lt;mark&gt;</code></mark> 
-                            on parem kui <code>&lt;span&gt;</code>
-                        </li>
-                        <li>
-                            <ins><code>&lt;ins&gt;</code></ins> 
-                            on parem kui <code>&lt;u&gt;</code>
-                        </li>
-                        <li>
-                            <del><code>&lt;del&gt;</code></del> 
-                            on parem kui <code>&lt;s&gt;</code>
-                        </li>
-                        <li>
-                            Kasuta kopeerimiseks klaviatuuril: <kbd>Ctrl</kbd> + <kbd>C</kbd>
-                        </li>
-                        <li>
-                            <code><var>x</var> = <var>y</var> + 2<sup>-1</sup></code>
-                        </li>
-                        <li>
-                            Programmi väljundi näide: <samp>Viga real 6.</samp>
-                        </li>
-                        <li>
-                            H<sub>2</sub>O
-                        </li>
-                    </ul>
+                    <section>
+                        <h3>Nimekirjad</h3>
+                        <h4> Tulemused: </h4>
+                        <ol>
+                            <li>Juku Tiik</li>
+                            <li>Malle Tamm</li>
+                            <li>Raiko Selge</li>
+                        </ol>
+                        <ul>
+                            <li>
+                                <strong><code>&lt;strong&gt;</code></strong> 
+                                on parem kui <code>&lt;b&gt;</code>
+                            </li>
+                            <li>
+                                <em><code>&lt;em&gt;</code></em> 
+                                on parem kui <code>&lt;i&gt;</code>
+                            </li>
+                            <li>
+                                <mark><code>&lt;mark&gt;</code></mark> 
+                                on parem kui <code>&lt;span&gt;</code>
+                            </li>
+                            <li>
+                                <ins><code>&lt;ins&gt;</code></ins> 
+                                on parem kui <code>&lt;u&gt;</code>
+                            </li>
+                            <li>
+                                <del><code>&lt;del&gt;</code></del> 
+                                on parem kui <code>&lt;s&gt;</code>
+                            </li>
+                            <li>
+                                Kasuta kopeerimiseks klaviatuuril: <kbd>Ctrl</kbd> + <kbd>C</kbd>
+                            </li>
+                            <li>
+                                <code><var>x</var> = <var>y</var> + 2<sup>-1</sup></code>
+                            </li>
+                            <li>
+                                Programmi väljundi näide: <samp>Viga real 6.</samp>
+                            </li>
+                            <li>
+                                H<sub>2</sub>O
+                            </li>
+                        </ul>
+                    </section>
                     <table>
                         <caption>Raskused</caption>
                         <thead>
@@ -114,9 +139,17 @@
                                 <td>64kg</td>
                                 <td>200£</td>
                             </tr>
+                            <tr>
+                                <td>54kg</td>
+                                <td>210£</td>
+                            </tr>
+                            <tr>
+                                <td>96kg</td>
+                                <td>670£</td>
+                            </tr>
                         </tbody>
                     </table>
-<pre>
+<pre class="definitsioon">
  Tere Juku!
                         Tere Malle!
  Tere Palk!
@@ -124,7 +157,7 @@
                     <!-- dfn teksti sisesks kasutuseks sarnaselt <q>-le -->
                     <dl>
                         <dt id="def-firefox">Firefox</dt>
-                        <dd>
+                        <dd class="definitsioon">
                               A free, open source, cross-platform,
                               graphical web browser developed by the
                               Mozilla Corporation and hundreds of
@@ -134,6 +167,11 @@
                     </dl>
             </article>
         </main>
+        <style>
+            aside{
+                background-color: #cef;
+            }
+        </style>
         <aside>
             <figure>
                 <video controls muted> <!-- Sarnane ka audio ja picture -->

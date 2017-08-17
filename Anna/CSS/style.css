@@ -1,0 +1,89 @@
+@import url(https://fonts.google.com/specimen/Lora?selection.family=Lora);
+article p {
+    font-family: Lora, cursive;
+}
+article {
+    background-color:lightgoldenrodyellow;
+    color: darkblue;
+    width: 75%;
+}
+.definitsioon {
+    background-color: lightskyblue;
+}
+#def-firefox {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px 20px;
+}
+[controls] {
+    border-style: dashed;
+    border-width: 3pw;
+}
+nav a {
+    text-decoration: none;
+}
+nav a::before {
+    content: ".";
+}
+/* tere kommentaar */
+nav ul {
+    list-style-type: none;
+}
+article p::first-letter {
+    font-size: 200%;
+}
+::-moz-selection, ::-ms-selection, ::-webkit-selection {
+  color: gold;
+  background: red;
+}
+::selection {
+  color: gold;
+  background: red;
+}
+a:visited {
+  color: aqua;
+}
+a:hover {
+  color: darkblue;
+}
+tbody > tr:nth-child(2n+1){
+    background-color: pink;
+}
+/* võib olla ka (even) või (odd) */
+@media screen and (min-width: 800px){
+    html {
+        /* font-size: 200%;*/
+        font-size: 16px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1em;
+    }
+}
+@media print {
+    html {
+        font-size: 16 px;
+    }
+}
+aside {
+    /*eelistatakse marginit, kui ei saa, siis kasutatakse paddingut */
+    margin-right: 0;
+    padding-top: 5%;
+    margin-left: 5%;
+}
+q {
+    background-color: azure;
+    width: 300px;
+    display: inline-block;
+    text-align: center;
+}
+#backvideo {
+    position: fixed;
+    z-index: -100;
+    min-width: 100%;
+    min-height: 100%;
+    background: url(http://thenewcode.com/assets/videos/polina.mp4) no-repeat;
+    background-size: cover;
+}

@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+header a {
+    display: block;
+    width: auto;
+}
+header a > img, article, video{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+header li, address, figcaption, nav ul{
+    text-align: center;
+}
+
+article p{
+    font-family: 'Lobster', cursive;
+}
+
+article {
+    background: rgba(54, 25, 25, .1);
+    color : darkblue;
+    width: 75%;
+    
+}
+.definitsioon {
+    background-color: lightskyblue;
+}
+#def-firefox{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px, 20px;
+}
+[controls] {
+    border-style: dashed;
+    border-width: 3px;
+}
+
+/* Kommentaar */
+nav ul {
+    list-style-type: none;
+}
+article p::first-letter {
+    font-size: 200%;
+}
+::-moz-selection {
+  color: gold;
+  background: palevioletred;
+}
+::selection {
+  color: gold;
+  background: palevioletred;
+}
+a:visited {
+    color: darkcyan;
+}
+tbody > tr:nth-child(-n+4) {
+    color: violet!important;
+}
+blockquote {
+    color: wheat!important;
+}
+hr{
+    height: 0;
+    flex-basis: 90%!important;
+}
+@media screen 
+    and (min-width: 320px) 
+    and (max-width: 480px) {
+        body {font-size: 200%;}
+        aside {font-size: 120%;}
+        h1{
+            font-size: 2rem;
+        }
+        p{
+            font-size: 1em;
+        }
+}
+
+@media print {
+    html{ font-size: 16pt;}
+}
+aside{
+    padding-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+q {
+    width: 100px;
+    background-color: azure;
+    text-align: center;
+    display: inline-block;
+    border-radius: 20px;
+}
+#backvideo {
+    position: fixed;
+    z-index: -100;
+    min-width: 100%;
+    min-height: 100%;
+    background: url(http://thenewcode.com/assets/videos/polina.jpg) no-repeat;
+    background-size: cover;
+}
+/*Flex*/
+#story{
+    display: flex;
+    flex-wrap: wrap;
+}
+#story > *{
+    flex: 1 0 45%;
+    margin: 10px;
+}
+#story > .header{
+    flex: 0 1 90%;
+}
+table{
+    text-align: center;
+}
+#story > table {
+    min-width: 45%;
+}
+/*Button*/
+nav li {
+    display: inline-block;
+    width: 100px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 25px;
+    background: #3498db;
+    color: whitesmoke;
+    box-shadow: 3px 3px 5px black;
+}
+nav a, nav a:visited, nav a:hover{
+    text-decoration: none;
+    color: whitesmoke;
+}
+nav li:hover {
+    transform: translate(2px, 2px);
+    background: #3cb0fd;
+    box-shadow: 1px 1px 5px black;
+    transition: transform 0.12s;
+}
+nav a::before {
+    content: "→";
+}
+
+img{
+    transition: transform 1s;
+    transition-timing-function: linear;
+}
+img:hover{
+    transform: scale(1.2, 1.2);
+    transition: transform 2s;
+}
+/*
+@keyframes img_scale{
+    from {
+        transform: scale(1, 1);
+    }
+    to{
+        transform: scale(1.2, 1.2)
+    }
+}
+img{
+    animation: img_scale 2s forwards;
+    animation-direction: alternate-reverse;
+}
+img:hover{
+    animation: img_scale 2s forwards;
+}
+*/

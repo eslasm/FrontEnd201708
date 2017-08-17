@@ -1,19 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html prefix="og: http://ogp.me/ns#" lang="et">
     <head>
+        <style>
+            aside {background-color: lightblue;
+                    color: green;}
+        </style>
         <!-- Päis (Head) ei ilmu otseselt ekraanile -->
         <meta charset="utf-8">
-        <title> Ilmub veebilehitseja ribal </title>
+
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"><!-- Mobiiliga scalemiseks-->
+
+        <!-- SEO: description peaks olema kuskil 155 tähemärki-->
+        <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit.<q>..Tsitaat!</q> Praesent facilisis pellentesque tincidunt. Pellentesque ornare vitae magna imperdiet condimentum.">
+        <!-- Hea boonus kui valitu keywordidest on mõni title-s h1-s ja body-s -->
+        <meta name="keywords" content="Lorem Ipsum">
+        <!-- SEO heaks märgiks on title kuskil 6 sõna -->
+        <!--Opengraph osa SEO-st-->
+        <link rel="icon" href="favicons/favico.ico" sizes="16x16">
+        <meta property="fb:app_id" content="554543543944">
+        <meta property="og:type" content="Article">
+        <meta property="og:url" content="https://koduleht.eu/article/Lorem_Ipsum.html">
+        <meta property="og:title" content="Lorem ipsum dolor sit amet">
+        <meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit.<q>..Tsitaat!</q> Praesent facilisis pellentesque tincidunt.">
+        <meta property="og:image" content="https://media.licdn.com/media/p/6/005/091/251/0167361.png">
+        <title> Lorem Ipsum </title>
+        <!-- SEO meta lõpp -->
+        <link rel="stylesheet" href="../CSS/style.css">
     </head>
     <body>
+        <video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg"
+        id="backvideo" autoplay muted loop playsinline>
+            <source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
+        </video>
 
         <header>
             <noscript>
                 Palun aktiveerige javascript!
             </noscript>
-            <a href="">
+            <a href="/">
                 <img src="https://media.licdn.com/media/p/6/005/091/251/0167361.png" height="100" alt="TudengTV Logo">
             </a>
+            
                 <nav>
                     <ul>
                         <li>
@@ -36,16 +63,18 @@
         </header>
         <main>
             
-            <article>
-                <h1>Lorem Ipsum</h1>
-                <span> Author: </span><cite>Muki Oja</cite><br>
-                <time datetime="2017-08-10">10-s August 2017</time>
-                <blockquote>
-                    Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
-                    <br><cite> Juku Tiik </cite>
-                </blockquote>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis pellentesque tincidunt. Pellentesque ornare vitae magna imperdiet condimentum. Nunc ultrices, risus eu imperdiet gravida, nunc enim iaculis dolor, nec hendrerit diam lacus vel ante. Morbi commodo nisi ac neque dignissim, at bibendum quam venenatis. Donec sed nisi eget dui venenatis pharetra. Nullam hendrerit est eget turpis molestie vestibulum. Etiam sollicitudin dolor non neque ultrices, sed pulvinar diam placerat. Aenean at imperdiet dolor, at semper metus. <a href="#def-firefox">Firefox</a>.
+            <article id="story" itemscope="http://schema.org/Article">
+                <section class="header">
+                    <h1 itemprop="name">Lorem Ipsum</h1>
+                    <span> Author: </span><cite itemprop="Author">Muki Oja</cite><br>
+                    <time datetime="2017-08-10" itemprop="datePublished">10-s August 2017</time>
+                    <blockquote style="color:black">
+                        Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+                        <br><cite> Juku Tiik </cite>
+                    </blockquote>
+                </section>
+                <p itemprop="description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.<q>..Tsitaat!</q> Praesent facilisis pellentesque tincidunt. Pellentesque ornare vitae magna imperdiet condimentum. Nunc ultrices, risus eu imperdiet gravida, nunc enim iaculis dolor, nec hendrerit diam lacus vel ante. Morbi commodo nisi ac neque dignissim, at bibendum quam venenatis. Donec sed nisi eget dui venenatis pharetra. Nullam hendrerit est eget turpis molestie vestibulum. Etiam sollicitudin dolor non neque ultrices, sed pulvinar diam placerat. Aenean at imperdiet dolor, at semper metus. <a href="#def-firefox">Firefox</a>.
                 </p>
                 <p>
                     Nulla tincidunt orci eget lacus laoreet, in pharetra est sodales. Vivamus dignissim quis eros id fringilla. Aliquam erat volutpat. Etiam quis odio eu sem malesuada blandit. Nullam ut nulla sed lorem elementum tristique. Pellentesque a massa ut sapien rhoncus tincidunt. Duis magna eros, scelerisque at lorem in, consequat semper nulla. Aenean cursus massa sed sem egestas, id vehicula ex dapibus. Fusce nec dapibus metus, eget pellentesque neque. Quisque porta pulvinar quam, nec ultrices ex ultrices non. Nulla facilisi. Pellentesque lacus magna, dapibus vitae rutrum a, efficitur sed lacus. Etiam imperdiet eget enim vitae interdum. Nunc bibendum, sem pellentesque pharetra hendrerit, nunc nunc laoreet mauris, eget molestie nulla sem a massa. 
@@ -59,91 +88,127 @@
                 <p>
                     Phasellus faucibus ac felis sit amet elementum. Nullam dictum laoreet ipsum eu mattis. Aenean vestibulum, dui dignissim aliquam varius, eros dolor suscipit mi, nec porta dolor turpis eu dolor. Nullam eu ligula lacus. Suspendisse vitae hendrerit augue. Nunc ipsum sem, imperdiet a tellus eget, auctor maximus enim. Sed blandit lorem pharetra, suscipit nisi nec, auctor tellus. Sed ligula orci, mollis eu tortor sit amet, rutrum tincidunt lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur at tristique urna. Aliquam varius a massa at suscipit. Sed ornare lacinia erat at porta. Phasellus augue sem, mollis eget tellus eu, mattis tincidunt neque. Cras quis ornare magna. Aliquam quam enim, imperdiet eget iaculis a, ullamcorper vel lacus. Morbi ut justo enim. 
                 </p>
-                <iframe             src="https://mdn-samples.mozilla.org/snippets/html/iframe-simple-contents.html"       width="100" height="75">
-                <p>Your browser does not support iframes.</p>
+                <hr>
+                <iframe src="https://www.youtube.com/embed/auC49oTXbXE?ecver=2">
+                    <p>Your browser does not support iframes.</p>
                 </iframe>
-                <hr><!-- teema või loo muutus, vaikimisi tekitab joone -->
+                
+                <!-- teema või loo muutus, vaikimisi tekitab joone -->
                 <!-- dfn teksti siseseks kasutuseks -->
-                <h4> Tulemused: </h4>
-                <ol>
-                    <li>Juku Tiik</li>
-                    <li>Andrus Veeroja</li>
-                    <li>Vana Kalle</li>
-                </ol>
-                <ul>
-                    <li>
-                        <strong>
-                            <code> &#60;strong&#62; </code> 
-                        </strong>
-                        on parem kui <code> &lt;b&gt;</code>
-                        
-                    </li>
-                    <li>
-                        <em>
-                            <code>&#60;em&#62;</code>
-                         </em>
-                        on parem kui <code> &lt;i&gt;</code>
-                        
-                    </li>
-                    <li>
-                        <mark>
-                            <code>&#60;mark&#62;</code>
-                        </mark>
-                         on parem kui 
-                         <span>
-                            <code> &lt;span&gt;</code>
-                         </span>
-                    </li>
-                    <li>
-                        <ins>
-                            <code>&#60;ins&#62;</code>
-                        </ins>
-                         on parem kui 
-                         <u>
-                            <code> &lt;u&gt;</code>
-                         </u>
-                    </li>
-                    <li>
-                        Kasuta klaviatuuril  <kbr>Ctrl</kbr> + <kbd>c</kbd>
-                    </li>
-                    <li>
-                        <var>x</var> = <var>y</var> + 2 
-                    </li>
-                    <li>
-                        Programmi väljund näide: <samp>Viga real 6.</samp>
-                    </li>
-                    <li>
-                        The chemical formula of water: H<sub>2</sub>O
-                    </li>
-                    <li>
-                        http://this<wbr>.is<wbr>.a<wbr>.really<wbr>.long<wbr>.example<wbr>.com/With<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages
-                    </li>
-                </ul>
-                <table>
-                    <caption>Raskused</caption>
-                    <thead>
-                        <tr>
-                            <th>Mass</th>
-                            <th>Hind</th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                            <th>Mass</th>
-                            <th>Hind</th>
-                        </tr>
-                    </tfoot>
-                    <tbody>
-                        <tr>
-                            <td>79kg</td>
-                            <td>350£</td>
-                        </tr>
-                        <tr>
-                            <td>90kg</td>
-                            <td>10£</td>
-                        </tr>
-                    </tbody>
-                </table>
+                
+                    <h3>Nimekirjad</h3>
+                    <h4> Tulemused: </h4>
+                    <ol>
+                        <li>Juku Tiik</li>
+                        <li>Andrus Veeroja</li>
+                        <li>Vana Kalle</li>
+                    </ol>
+                    <ul>
+                        <li>
+                            <strong>
+                                <code> &#60;strong&#62; </code> 
+                            </strong>
+                            on parem kui <code> &lt;b&gt;</code>
+                            
+                        </li>
+                        <li>
+                            <em>
+                                <code>&#60;em&#62;</code>
+                            </em>
+                            on parem kui <code> &lt;i&gt;</code>
+                            
+                        </li>
+                        <li>
+                            <mark>
+                                <code>&#60;mark&#62;</code>
+                            </mark>
+                            on parem kui 
+                            <span>
+                                <code> &lt;span&gt;</code>
+                            </span>
+                        </li>
+                        <li>
+                            <ins>
+                                <code>&#60;ins&#62;</code>
+                            </ins>
+                            on parem kui 
+                            <u>
+                                <code> &lt;u&gt;</code>
+                            </u>
+                        </li>
+                        <li>
+                            Kasuta klaviatuuril  <kbr>Ctrl</kbr> + <kbd>c</kbd>
+                        </li>
+                        <li>
+                            <var>x</var> = <var>y</var> + 2 
+                        </li>
+                        <li>
+                            Programmi väljund näide: <samp>Viga real 6.</samp>
+                        </li>
+                        <li>
+                            The chemical formula of water: H<sub>2</sub>O
+                        </li>
+                        <li>
+                            http://this<wbr>.is<wbr>.a<wbr>.really<wbr>.long<wbr>.example<wbr>.com/With<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages
+                        </li>
+                    </ul>
+                    <table>
+                        <caption>Raskused</caption>
+                        <thead>
+                            <tr>
+                                <th>Mass</th>
+                                <th>Hind</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Mass</th>
+                                <th>Hind</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td>79kg</td>
+                                <td>350£</td>
+                            </tr>
+                            <tr>
+                                <td>90kg</td>
+                                <td>10£</td>
+                            </tr>
+                            <tr>
+                                <td>79kg</td>
+                                <td>350£</td>
+                            </tr>
+                            <tr>
+                                <td>5kg</td>
+                                <td>20£</td>
+                            </tr>
+                            <tr>
+                                <td>7520kg</td>
+                                <td>30£</td>
+                            </tr>
+                            <tr>
+                                <td>7822kg</td>
+                                <td>1222£</td>
+                            </tr>
+                            <tr>
+                                <td>79kg</td>
+                                <td>300£</td>
+                            </tr>
+                            <tr>
+                                <td>8kg</td>
+                                <td>9000£</td>
+                            </tr>
+                            <tr>
+                                <td>234kg</td>
+                                <td>1£</td>
+                            </tr>
+                            <tr>
+                                <td>25kg</td>
+                                <td>10£</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 <pre>
                     Tere Juku!
                     Tere Andrus!
@@ -151,7 +216,7 @@
                 </pre>
                 <dl><!-- definitsioonid -->
                     <dt id="def-firefox">Firefox</dt> <!-- defineeritav sõna -->
-                    <dd> <!-- definitsioon ise -->
+                    <dd class="definitsioon"> <!-- definitsioon ise -->
                     A free, open source, cross-platform,
                     graphical web browser developed by the
                     Mozilla Corporation and hundreds of
