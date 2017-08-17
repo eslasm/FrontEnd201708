@@ -1,11 +1,22 @@
 @import url("https://fonts.googleapis.com/css?family=Indie+Flower");
+header a{
+    display: block;
+}
+header a > img, nav li, article, video {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+header li, address, figcaption{
+    text-align: center;
+}
 article p {
     font-family: 'Indie Flower';
 }
 article {
     background-color: lightyellow;
     color: darkblue;
-    width: 75%
+    width: 75%;
     
 }
 .definitsioon {
@@ -41,18 +52,21 @@ article p::first-letter {
     background: red;
 }
 /*linkide puhul*/
-a:visited {
-    color: lightgrey;
+/*nav a, nav a:visited, nav a:hover {
+    color: lightgrey;*/
 }
-a:hover{
-    color: darkblue;
-}
+
 /*tabelis iga teine element on roosa, voib kasutada ka even voi odd*/
 tbody > tr:nth-child(2n+1){
     background-color: pink!important;/*important - kasutada näiteks wordpressis üle kirjutades*/
 }
 blockquote {
     color: brown!important;
+}
+/* hr on teemavahetus joon */
+hr{
+    height: 0;
+    flex-basis: 90%!important;
 }
 /*kasutatakse erinevate ekraanide jaoks*/
 @media screen and (min-width:800px){
@@ -67,10 +81,11 @@ p{
     font-size: 1em;
 }
 aside{
-    padding-left: 20%;
+    padding-top: 20px;
+    padding-bottom: 20px;
     margin-left: 5%;
-    margin-top:0
-
+    margin-right: 5%;
+    
 }
 Q{
     background-color: lightblue;
@@ -82,7 +97,66 @@ Q{
     position: fixed;
     z-index: -100;
     min-width: 100%;
-    background: url (http://thenewcode.com/assets/images.polina.jpg)
+    background: url (http://thenewcode.com/assets/images.polina.jpg);
     background-size: cover;
+}
+/*Flex*/
+#story{
+    display: flex;
+    flex-wrap: wrap;
+}
+/* koik story lapsed on tärni* tähendus */
+#story > *{
+        flex: 0 1 45%;
+        margin: auto;
+}
+#story > .header{
+    flex: 0 1 90%;
+}
+#story > table{
+    min-width: 45%;
+}
+/*button*/
 
+nav li{
+    width: 200px;
+    padding: 5px;
+    /*margin: 10px auto;*/
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 25px; /* teeb ümaraks otsad*/
+    background: #3498db;
+    box-shadow: 3px 3px 5px darkblue;
+}
+nav a, nav a:visited, nav a:hover {
+    text-decoration: none;
+    color: whitesmoke
+}
+nav li:hover{ 
+    background: #3cb0fd;
+    box-shadow: 3px 3px 5px darkblue; 
+    transform: translate(3px, 2px); /*liigutab nuppe*/
+    transition: transform 0.5s;      
+}
+/*
+@keyframes img_scale{
+    from{
+        transform: scale (1, 1)
+    }
+    to{
+        transform: scale (1.2, 1.2)
+    }
+}
+
+img:hover{
+    animation: img_scale 2s forwards;
+}
+*/
+img{
+    transition: transform 2s;
+    transition-timing-function: linear;
+}
+img:hover{
+   transform: scale(1.2, 1.2);/*pilt läheb suuremaks hoveri ajal*/
+    transition: transform 2s;/* aeg 2 sek*/ 
 }
