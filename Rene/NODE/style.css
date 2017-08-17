@@ -7,3 +7,20 @@
     height:30px;
     background:slateblue;
 }
+
+.cookies {
+    text-align:center;
+}
+
+#carouselExampleControls {
+    width:640px;
+    height:350px;
+    margin-left: auto;
+    margin-right:auto;
+    margin-top:25px;
+}
+
+#carouselExampleControls img {
+    width:640px;
+    height:350px;
+}
