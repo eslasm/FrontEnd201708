@@ -1,8 +1,17 @@
 .container, .container-fluid{
-    height: 100px;
-    background: salmon;
+    /*height: 100px;*/
+    background: lightblue;
 }
 .container-fluid > .container{
-    height: 30px;
+    /*height: 30px;*/
     background: slateblue;
+    margin-top: 5px;
+}
+.cookies{
+    text-align: center;
+}
+#carouselExampleControls{
+    margin-left: auto;
+    margin-right: auto;
+    width: 640px;
 }
