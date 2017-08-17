@@ -1,0 +1,9 @@
+.container, .container-fluid {
+    background:salmon;
+    height:100px;
+}
+
+.container > .container {
+    height:30px;
+    background:slateblue;
+}
