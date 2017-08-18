@@ -200,5 +200,4 @@ minuKoer.kuvaNimetus();
 minuKoer.viskaKont();
 minuKoer.kasKontiOtsib();
 
-Algus.Loom.prindiHulk();
 }

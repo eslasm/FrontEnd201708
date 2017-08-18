@@ -201,6 +201,5 @@ var Algus;
     minuKoer.kuvaNimetus();
     minuKoer.viskaKont();
     minuKoer.kasKontiOtsib();
-    Algus.Loom.prindiHulk();
 })(Algus || (Algus = {}));
 //# sourceMappingURL=algus.js.map
