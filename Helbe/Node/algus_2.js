@@ -217,4 +217,4 @@ var Algus;
     minuKoer.kasKontiOtsib();
 })(Algus || (Algus = {}));
 Algus.Loom.prindiHulk();
-//# sourceMappingURL=algus.js.map
+//# sourceMappingURL=algus_2.js.map

@@ -11,19 +11,18 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var Algus;
 (function (Algus) {
-    // alert("Tere");
-    console.log('Tere tulemast2!');
-    /* muutujad ja tyybid */
-    var kasOnMuutumatu = true;
-    var kasOnMuudetav = true;
-    // kasOnMuutumatu = false;
+    // alert("Tere")
+    console.log('Tere tulemast');
+    /* muutujad ja tüübid */
+    var kasOnMuutumatu = true; // ei saa objekti muuta, konstant
+    var kasOnMuudetav = true; // let-i saab muuta
     kasOnMuudetav = true;
     var t6ene;
     t6ene = true;
     var arv;
     arv = 5;
-    var s6ne;
-    s6ne = 'Tere';
+    var s6na;
+    s6na = 'Tere';
     var massiiv;
     massiiv = [1, 2, 3];
     var tuple;
@@ -35,102 +34,78 @@ var Algus;
         V2rv[V2rv["Kollane"] = 3] = "Kollane";
     })(V2rv || (V2rv = {}));
     var v2rv = V2rv.Punane;
-    // let suvaline: any;
-    // void, null ja undefined, never
+    var suvaline; // pole otseselt soovitatav kasutada
+    //muutujad void, null ja undefined kasut algväärtustamiseks, kasut funktsioonidega
     /* operaatorid */
     arv = 5 + 2;
     arv = 5 - 2;
-    arv = 5 * 2; // 10
-    arv = 6 / 2; // 3
+    arv = 5 * 2;
+    arv = 6 / 2; // kirjutab 3
+    arv = arv + 4; // saab arvu 7
+    arv += 4; // saab arvu 11
     console.log(arv);
-    arv = arv + 4; // 7
-    arv += 4; // 11
-    arv %= 3; // 2 jääk
+    arv %= 3; // protsent tagastab jäägi vastus 2
     console.log(arv);
-    arv++; // 3
-    ++arv; // 4
-    arv--; // 3
-    arv = (3 + 4) * 5; // 35
-    arv = Math.pow(10, 2); // 100 astmes eksperimentaalne
+    arv++; // vastus 3
+    ++arv; // vastus 4 tehete jätjekord pikkades tehetes oluline 
+    arv--; // vastus 3
+    arv = 5 * (3 + 4); // vastus 35
+    arv = Math.pow(10, 2); // 10 astmes 2 eksperimentaalne
     console.log(arv);
-    s6ne += ' sõne';
-    s6ne += " arv: " + arv + ".";
-    console.log(s6ne);
-    /* tingimuslaused */
-    s6ne = arv === 100 ? 'Tere' : 'Headaega';
-    console.log(s6ne);
-    var a = 10;
+    s6na += ' tere ';
+    console.log(s6na);
+    s6na += "arv: " + arv + "."; // Tere tere arv 100.
+    console.log(s6na);
+    /*tingimuslaused*/
+    s6na = arv === 100 ? 'Tere' : 'Head aega';
+    console.log(s6na);
     if (arv === 100) {
-        // tslint:disable-next-line:no-shadowed-variable
-        var a_1 = 0; // potentsiaalne shadowed variable
-        a_1 = 0;
-        s6ne = 'Tere';
+        s6na = 'Tere';
     }
     else if (arv < 100) {
-        s6ne = 'Headaega';
+        s6na = 'Head aega!';
     }
     else {
-        s6ne = '...';
+        s6na = '...';
     }
-    console.log(a);
+    console.log(s6na);
     switch (arv) {
         case 100:
-            s6ne = 'Tere';
+            s6na = 'Tere';
             break;
         case 102:
         case 90:
-            s6ne = 'Headaega';
+            s6na = 'Heada ega';
             break;
         default:
-            s6ne = '...';
+            s6na = '...';
     }
     switch (v2rv) {
         case 1:
         case V2rv.Punane:
-            s6ne = 'Roheline või Punane';
+            s6na = 'roheline või punane';
             break;
         default:
-            s6ne = 'Muu värv';
+            s6na = 'muu värv';
     }
-    if (s6ne !== 'Tere' && arv >= 0) {
-        s6ne = 'Tingimus täidetud';
-    }
-    // === on täpsem kui ==  sama ka !== !=
-    /* Tsükklid */
+    if (s6na !== 'Tere' && arv >= 0)
+        s6na = 'Tingimus täidetud';
+    // === on täpsem kui == , sama ka !== ja !=
+    /* Tsüklid */
     for (var i = 0; i < 5; ++i) {
-        if (i === 3) {
-            continue;
-        }
-        console.log("V\u00E4\u00E4rtus ts\u00FCklis " + i);
+        console.log("V\u00E4\u00E4rtus ts\u00FCklis " + i); // kaldkriipsukesed jutumärkide asemel
     }
     arv = 0;
     while (arv <= 10) {
-        s6ne += '2';
+        s6na += '2 '; //hakkab nullist lugema, teeb seega 11 korda
         if (arv === 5) {
-            s6ne += '3';
-            break;
+            s6na += '3 ';
         }
         arv++;
     }
-    console.log(s6ne);
-    // do while
-    var massiiv2 = [4, 5, 6];
-    var esimene = massiiv2[0];
-    // tslint:disable-next-line:prefer-for-of
-    for (var i = 0; i < massiiv2.length; ++i) {
-        console.log(massiiv2[i]);
-    }
-    for (var _i = 0, massiiv2_1 = massiiv2; _i < massiiv2_1.length; _i++) {
-        var element = massiiv2_1[_i];
-        console.log(element);
-    }
-    for (var index in massiiv2) {
-        if (Number(index) < 0) {
-            console.log(index);
-        }
-    }
-    /* funktsioon */
-    // tslint:disable-next-line:only-arrow-functions
+    console.log(s6na); //arv on 10
+    // do while teeb ühe korra ära ja siis vaatab kas on veel vaja
+    /* funktsioonid */
     function liitmine(arv1, arv2) {
         if (arv1 === 10 || arv2 === 10) {
             return 10;
@@ -139,37 +114,52 @@ var Algus;
     }
     arv = liitmine(2, arv);
     console.log("Liitmine " + arv);
-    // tslint:disable-next-line:arrow-return-shorthand
     var f = function (arv1, arv2) { return arv1 - arv2; };
-    f = function (arv1, arv2) { return arv1 - arv2; }; // üherealised
     console.log(f(10, arv));
     var tulemus = f(11, arv);
-    /* nullable types, undefined */
+    console.log(f(10, arv));
+    /* nullable types */
     var arv3;
-    // tslint:disable-next-line:no-null-keyword
-    arv3 = null; // seda ei ole soovituslik kasutada
-    var muutuja;
-    // soovituslik määramata tüübi kontroll
+    arv3 = null; // nullväärtus tähendab asi ei ole defineeritud ei ole soovituslik kasutada
+    var muutuja; // defineerimata muutuja, kontrollib tüüpi, aga number tüüp ei rakendu enne kui antakse mingi väärtus talle
     if (typeof muutuja === 'undefined') {
         console.log(typeof muutuja);
     }
     /* typeof ja instanceof */
-    // tslint:disable-next-line:no-any
-    var kasOnNumber = function (x) { return typeof x === 'number'; };
+    var kasOnNumber = function (x) { return typeof x === 'number'; }; // kas muutuja tüüp on võrdne numbriga, typeof tagastab stringi
     console.log(kasOnNumber(4));
-    /* objekt */
-    var objekt = { eesnimi: 'Juku', perenimi: 'Tamm' };
+    console.log(typeof massiiv);
+    /* objekti loomine */
+    var objekt = { eesnimi: 'Juku', perenimi: 'Tamm' }; //const ei lase muuta isikut, voib muuta nime jne
     objekt.eesnimi = 'Kalle';
     var isikutootlus = function (isik) {
-        // isik.perenimi = 'Tamm';
         console.log("Nimi: " + isik.eesnimi + " " + isik.perenimi);
         if (isik.vanus) {
-            console.log("Vanus: " + isik.vanus);
+            console.log("Vanus " + isik.vanus + " ");
         }
     };
     isikutootlus({ eesnimi: 'Kalle', perenimi: 'Sarapuu' });
     isikutootlus({ eesnimi: 'Juku', perenimi: 'Selge', vanus: 12 });
     /* class */
+    var kass = new Loom('kaslane');
+    kass.muudaNimetus('kass');
+    kass.kuvaNimetus();
+    //for tsükkel
+    var massiiv2 = [4, 5, 6];
+    var esimene = massiiv2[0];
+    for (var i = 0; i < massiiv2.length; ++i) {
+        console.log(massiiv2[i]);
+    }
+    for (var index in massiiv2) {
+        if (Number(index) > 0) {
+            console.log(index);
+        }
+    }
+    /* export const minukass = new Loom('kaslane');
+    minukass.muudaNimetus('kass');
+    if (minukass instanceof Loom) {
+        minukass.kuvaNimetus();
+    }*/
     var Loom = (function () {
         function Loom(nimetus) {
             this.nimetus = 'loom';
@@ -190,7 +180,7 @@ var Algus;
         return Loom;
     }());
     Algus.Loom = Loom;
-    /* pärimine */
+    /*pärimine*/
     var Koer = (function (_super) {
         __extends(Koer, _super);
         function Koer() {
@@ -216,5 +206,8 @@ var Algus;
     minuKoer.viskaKont();
     minuKoer.kasKontiOtsib();
 })(Algus || (Algus = {}));
+// static staatiline element, mis kehtib näit koigi loomade kohta
+// namespace ei näita konsoolis kogu sisu vaid ainult väljundit
+Algus.minukass.kuvaNimetus();
 Algus.Loom.prindiHulk();
-//# sourceMappingURL=algus.js.map
+//# sourceMappingURL=algus3.js.map
