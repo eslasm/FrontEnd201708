@@ -215,4 +215,14 @@ var Algus;
     minuKoer.kasKontiOtsib();
 })(Algus || (Algus = {}));
 Algus.Loom.prindiHulk();
-//# sourceMappingURL=algus.js.map
+/// <reference path='algus.ts'/>
+var Teine;
+(function (Teine) {
+    // tere teine fail
+    Algus.Loom.prindiHulk();
+    var pealkiri = document.getElementById('pealkiri');
+    if (pealkiri) {
+        pealkiri.innerText = 'Tere tulemast!';
+    }
+})(Teine || (Teine = {}));
+//# sourceMappingURL=tsc.js.map
