@@ -136,7 +136,7 @@
         "comment-format": [
             true, 
             "check-space", 
-            "check-lowercase"
+            "check-uppercase"
         ],
         /* No docs yet */
         "completed-docs": false,
