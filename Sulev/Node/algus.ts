@@ -27,6 +27,7 @@ namespace Algus{
     });
     enum V2rv {Roheline, Punane, Kollane}
     let v2rv: V2rv= V2rv.Punane;
+    v2rv = V2rv.Kollane;
 
     // let suvaline: any = 5;
     // void, null ja undefinded, never;
@@ -88,6 +89,20 @@ namespace Algus{
         console.log(element);
     }
 
+    /* Maatrixid */
+    /*
+    let integerMatrix: number[][];
+    integerMatrix= [[1, 2 ,3], [9, 8 ,5], [9, 3 ,5]];
+    for ( let i = 0; i < integerMatrix.length; i++) {
+       for ( let j = 0; j < integerMatrix[i].length; j++) {
+            console.log (integerMatrix[i] + ' ');
+        }
+    }
+    */
+    // console.table(integerMatrix);
+    
+
+
 
     /* Funktsioonid */
 
@@ -103,13 +118,15 @@ namespace Algus{
     // loogelisi sulge poe vaja kui on ühelrealine funktsioon nt: let f = (arv1: number, arv2:number) => arv1 - arv2; 
     console.log(f(10, arv));
     let tulemus = f(11, 3);
+    tulemus = 0;
 
     /* nullable types */
 
     let arv3 : number | null;
     arv3 = null; // Pole soovituslik kasutada
+    /*
     let muutuja: number;
-    /* if(muutuja === undefined){
+     if(muutuja === undefined){
         console.log(typeof muutuja);
     } */
 
@@ -137,7 +154,7 @@ namespace Algus{
     isikutootlus({eesnimi: 'Olle', perenimi: 'Ta'});
 
     /* Class */
-    class Loom{
+    export class Loom{
         private nimetus = 'Loom';
         private static hulk = 0;
         constructor(nimetus?: string){
@@ -179,4 +196,3 @@ namespace Algus{
     minuKoer.kasOtsibKonti();
     Loom.kuvaHulk();
 }
-Algus.minuKass.kuvaNimetus();

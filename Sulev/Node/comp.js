@@ -197,4 +197,8 @@ var Algus;
     minuKoer.kasOtsibKonti();
     Loom.kuvaHulk();
 })(Algus || (Algus = {}));
-//# sourceMappingURL=algus.js.map
+Algus.minuKass.kuvaNimetus();
+/// <reference path='algus.ts'/>
+// Tere teine
+Algus.Loom.kuvaHulk();
+//# sourceMappingURL=tsc.js.map
