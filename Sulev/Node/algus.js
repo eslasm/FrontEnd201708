@@ -111,6 +111,7 @@ var Algus;
        for ( let j = 0; j < integerMatrix[i].length; j++) {
             console.log (integerMatrix[i] + ' ');
         }
+        console.log('\n');
     }
     */
     // console.table(integerMatrix);
