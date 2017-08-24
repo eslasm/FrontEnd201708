@@ -168,5 +168,106 @@ var Teine;
     var re = /(\w+)\s(\w+)/;
     var nimi = 'Juku Tamm';
     console.log(nimi.replace(re, '$2, $1')); /* Tamm, Juku */
+    /* Massiivid */
+    var massiiv = ['õun', 'pirn', 'banaan', 'sidrun'];
+    var massiiviPikkus = massiiv.length;
+    // const massiiv2 = Array.from(massiiv);
+    var massiiv3 = new Array('õun', 'pirn', 'banaan', 'sidrun');
+    // const massiiv3 = Array.of('õun', 'pirn', 'banaan', 'sidrun');
+    // ühe elemendi puhul esimene loob ikka massiivi aga teine tagastab sama elemendi
+    Array.isArray(massiiv); // kas on massiiv
+    massiiv3 = massiiv3.concat(massiiv);
+    // massiiv3 = massiiv3.slice(2, 5); // kopeerib osa elemente
+    massiiv = massiiv3.splice(2, 3); // eemaldatud elemendid lisatakse teise massiivi
+    // massiiv3.copyWithin(2, 1, 3); // kopeerib juba massiivi sees
+    massiiv.fill('', 0, 10);
+    console.log(massiiv3);
+    // lisamine ja eemaldamine
+    massiiv3.push('apelsin'); // lisab lõppu
+    massiiv3.pop(); // apelsin
+    massiiv3.unshift('ploom');
+    massiiv3.shift(); // ploom
+    // otsing
+    massiiv3.includes('sidrun', 2); // true
+    massiiv3.indexOf('sidrun', 2); // asukoht 4
+    massiiv3.lastIndexOf('sidrun');
+    console.log(massiiv3.findIndex(function (element) { return element.startsWith('ba'); }));
+    console.log(massiiv3.find(function (element) { return element.startsWith('ba'); }));
+    // kuvamine
+    massiiv3.toString();
+    massiiv3.toLocaleString();
+    console.log(massiiv3.join('-:-'));
+    // muu massiiv
+    massiiv3.every(function (element) { return element[0] === element[0].toLowerCase(); }); // kõik elemendid
+    massiiv3.some(function (element) { return element[0] === element[0].toUpperCase(); }); // vähemalt üks
+    // sorteerimine
+    massiiv3.sort(); // sorteerib arv > suur täht > väike täht
+    var numbrid = [2, 4, 5, 1, 7];
+    numbrid.sort(function (a, b) {
+        console.log("a: " + a + ", b: " + b);
+        return b - a;
+    });
+    console.log(numbrid);
+    massiiv3.reverse(); // pöörab olema oleva massiivi pahupidi
+    // reduce reduceRight
+    var astemesNumbrid2 = [[1, 2], [4, 7], [8, 9]];
+    var numbrid2 = astemesNumbrid2.reduceRight(function (a, b) { return a.concat(b); });
+    // map, filter
+    numbrid2 = numbrid2.map(Math.sqrt);
+    numbrid2 = numbrid2.filter(function (arv) { return arv > 2; });
+    // keys, values, entries
+    var iterator = numbrid.entries();
+    console.log(iterator.next().value);
+    console.log(iterator.next().value);
+    var iterator2 = numbrid.keys();
+    console.log(iterator2.next().value);
+    console.log(iterator2.next().value);
+    var iterator3 = numbrid.values();
+    console.log(iterator3.next().value);
+    console.log(iterator3.next().value);
+    // numbrid.forEach((element) => { console.log(element); });
+    console.log(numbrid2);
+    /* Map ja Set */
+    var map = new Map([['T', 25], ['P', 32], ['L', 21]]);
+    map.set('S', 5);
+    map.set('P', 21);
+    map.delete('L');
+    // map.clear(); //kustutab kõik
+    map.has('T'); // true
+    map.get('T'); // 25
+    // map.forEach((el) => { });
+    // values and entries sarnaselt arrayle
+    for (var _i = 0, _a = Array.from(map); _i < _a.length; _i++) {
+        var _b = _a[_i], key = _b[0], value = _b[1];
+        console.log(key + ": " + value);
+    }
+    console.log(map.size); // elementide arv
+    /* functions */
+    function funk(param, param2, param3) {
+        return param + param2 + param3;
+    }
+    console.log(funk.name + " " + funk.length);
+    var See = (function () {
+        function See() {
+            this.samm = 5;
+            // kasutada ainult kui vaja manipuleerida this
+            funk.apply(this, [3, 2, 1]); // need ei kutsu funktsiooni
+            funk.bind(undefined, 1, 3, 2); // need ei kutsu funktsiooni
+            funk.call(this, 1, 2, 3); // see kutsub, funk(1,2,3);
+            // () => { }
+        }
+        return See;
+    }());
+    /* DOM */
+    var element = document.getElementById('pealkiri');
+    var elements = document.getElementsByClassName('btn-cancel');
+    var elements1 = document.getElementsByTagName('article');
+    var element2 = document.querySelector('body article'); // tagastab esimest elementi
+    var elements2 = document.querySelectorAll('body article'); // css queryde abil
+    // $('body article'); //jquery
+    elements.item(0);
+    elements1.item(0);
+    // halvemad alternatiivid eventlisteneritele
+    elements.item(0).onclick = function (event) { alert(event); };
 })(Teine || (Teine = {}));
 //# sourceMappingURL=teine.js.map
