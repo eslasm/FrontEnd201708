@@ -288,5 +288,6 @@ namespace Teine {
     elements1.item(0);
 
     // halvemad alternatiivid eventlisteneritele
-    (elements.item(0) as HTMLElement).onclick = (event) => {alert(event); };
+    (elements.item(0)as HTMLElement).onclick = (event) => {alert(event); };
+
 }
