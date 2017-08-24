@@ -18,3 +18,7 @@
 .d-block{
     height: 360px;
 }
+.btn-cancel{
+    background: red;
+    color: white;
+}

@@ -138,12 +138,113 @@ namespace Teine{
     s6na.match('Tere'); // ainult regex
     console.log(s6na);
     console.log(s6naMassiiv);
-    s6na.toLocaleLowerCase();// tagastab stringi ainult väikeste tähtedega
-    s6na.toLocaleUpperCase();// tagastab stringi kõik tähed suurtena
+    s6na.toLocaleLowerCase(); // tagastab stringi ainult väikeste tähtedega
+    s6na.toLocaleUpperCase(); // tagastab stringi kõik tähed suurtena
 
     /* Regex */
     const reg = /(\w+)\s(\w+)/;
     const nimi = 'Sulev Pakkas';
     console.log(nimi.replace(reg, '$2, $1')); // Pakkas, Sulev
+    
+    /* Massiivid */
+    const massiiv = ['õun', 'pirn', 'apelsin', 'banaan', 'sidrun'];
+    const massiiviPikkus = massiiv.length;
+    // const massiiv2 = Array.from(massiiv);
+    let massiiv3 = new Array ('õun', 'pirn', 'apelsin', 'banaan', 'sidrun');
+    // const massiiv4 = Array.of('õun', 'pirn', 'apelsin', 'banaan', 'sidrun');
+    Array.isArray(massiiv3); //Kas tegu on massiiviga
+
+    massiiv3 = massiiv3.concat(massiiv);
+    massiiv3.splice(2, 3); // eemaldab massiivist alates asukohats 2, kolm elementi ja tagastab nad
+    massiiv3.slice(2, 3); // kopeerib elemendid indexiga 2 kuni elemendini indeksiga 3
+    //massiiv3.copyWithin(1, 3, 4);  pole aimugi kuidas se midagi teed, phmtsl kopeerib 
+    //ja asendab mingeid elemente millegi järgi
+    massiiv.fill('naan');
+    
+    massiiv.push('laim'); // lisab elemendi massiivi lõppu
+    massiiv.pop(); // tagastab viimase elemendi ja eemaldab selle massiivist
+    massiiv.unshift('ploom'); //lisab elemendi massiivi algusesse
+    massiiv.shift();// tagastab esimese elemendi ja eemaldab selle massiivist
+    massiiv.includes('naan', 2); // hakkab otsima elementi naan alates kolmandast elemendist
+    console.log(massiiv3.find((element) => element.startsWith('ap')));
+    console.log(massiiv);
+    
+    console.log(massiiv3.toLocaleString());
+    console.log(massiiv3.join(', '));
+
+    /* Muu massiivi töötlus */
+    massiiv3.every((element)=> element[0] === element[0].toUpperCase());
+    massiiv3.some((element)=> element[0] === element[0].toUpperCase());
+    
+    /* Sorteerimine */
+    massiiv3.sort(); //defaultis sorteerib Ascii kasvavas järjekorras
+    massiiv3.reverse(); // pöörab massiivi järjekorra tagurpidi
+
+    // reduce reduceRight
+    const astmesNumbrid2 = [[1, 2], [4, 7], [9,5]];
+    let numbrid2 = astmesNumbrid2.reduce((a: number[], b: number[]) => a.concat(b));
+    let ruudud = [9, 100, 81, 64, 49];
+    console.log(numbrid2);
+    numbrid2.forEach((element) => console.log(element));
+    
+    console.log(ruudud.map(Math.sqrt));
+    numbrid2 = ruudud.filter((arv) => arv > 10);
+    // enries, values, keys
+    const iterator = numbrid2.entries();
+    console.log(iterator.next().value);
+    console.log(iterator.next().value);
+
+    const iterator2 = numbrid2.keys();
+    console.log(iterator2.next().value);
+    console.log(iterator2.next().value);
+    /*
+    const iterator3 = numbrid2.values();
+    console.log(iterator3.next().value);
+    console.log(iterator3.next().value);
+    */
+    /* Map ja Set */
+
+    const map = new Map([['T', 25], ['P', 55], ['C', 896]]);
+    map.set('S', 84123);
+    map.set('P', 3);
+    map.delete('C');
+    console.log(map.size); // annab mapis olevate elementide arvu
+    map.has('P'); // kontrollib kas map-s on element võtmega P ja tagastab true/false
+    map.get('P'); // 3
+    for(const [key, value] of Array.from(map)){
+        console.log(key + ': ' + value);
+    }
+
+    /* Functions */
+
+    function funk(param: number, param2: number, param3: number) {
+        //console.log(this.samm);
+        return param + param2 + param3;
+    }
+    
+    console.log(`${funk.name} ${funk.length}`);
+    
+    class See{
+        public samm = 5;
+        constructor(){
+            // kasuta ainult kui vaja manipuleerida "this"
+            funk.apply(this, [3, 2 ,7]); // ei kutsu funktsiooni
+            funk.bind(undefined, 9, 5, 3); // ei kutsu funktsiooni
+            funk.call(this, 1, 2, 3); // kutsub funktsiooni, võrdväärne funk(1,2,3);
+        }
+    }
+        /* DOM (Document Object Model) */
+        /* Elementide kättesaamine */
+        let element = document.getElementById('pealkiri') as HTMLHeadingElement;
+        let elements = document.getElementsByClassName('btn-cancel');
+        let elements1 = document.getElementsByTagName('article');
+        let element2 =document.querySelector('body article'); // otsiva css queryde abil tagastab ainult esimese nimetatud elemendi
+        let elements2 = document.querySelectorAll('body article'); // otsiva css queryde abil tagastab listi
+        // $('body article'); // jquery
+        elements.item(0);
+        elements1.item(0);
+
+        //Halvemad alternatiivid eventlistenerile
+        (elements.item(0)as HTMLElement).onclick = (event) => { alert(event); };
 
 }

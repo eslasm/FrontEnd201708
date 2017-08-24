@@ -36,7 +36,7 @@ namespace Algus{
     arv = 5 - 2;
     arv = 5 * 2;
     arv = 6 / 2;
-    console.log(arv);
+    //console.log(arv);
     arv = arv + 4;  // 7
     arv += 4; // 11
     arv %= 3; // 2 jääk
@@ -44,14 +44,14 @@ namespace Algus{
     ++arv; // 4
     arv--; // 3
     arv = 10 ** 2; // 100 astmed. eksperimentaalne
-    console.log(arv);
+    //console.log(arv);
     s6na += ' sõna';
     s6na += ` arv: ${arv}.`;
-    console.log(s6na);
+    //console.log(s6na);
 
     /* Tingimus laused */
     s6na = arv === 100 ? 'Tere' : 'Head aega';
-    console.log(s6na);
+    //console.log(s6na);
     if (arv === 100) {
         s6na = 'Tere2';
     } else if (arv < 100){

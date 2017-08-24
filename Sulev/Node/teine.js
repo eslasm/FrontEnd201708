@@ -133,5 +133,93 @@ var Teine;
     var reg = /(\w+)\s(\w+)/;
     var nimi = 'Sulev Pakkas';
     console.log(nimi.replace(reg, '$2, $1')); // Pakkas, Sulev
+    /* Massiivid */
+    var massiiv = ['õun', 'pirn', 'apelsin', 'banaan', 'sidrun'];
+    var massiiviPikkus = massiiv.length;
+    // const massiiv2 = Array.from(massiiv);
+    var massiiv3 = new Array('õun', 'pirn', 'apelsin', 'banaan', 'sidrun');
+    // const massiiv4 = Array.of('õun', 'pirn', 'apelsin', 'banaan', 'sidrun');
+    Array.isArray(massiiv3); //Kas tegu on massiiviga
+    massiiv3 = massiiv3.concat(massiiv);
+    massiiv3.splice(2, 3); // eemaldab massiivist alates asukohats 2, kolm elementi ja tagastab nad
+    massiiv3.slice(2, 3); // kopeerib elemendid indexiga 2 kuni elemendini indeksiga 3
+    //massiiv3.copyWithin(1, 3, 4);  pole aimugi kuidas se midagi teed, phmtsl kopeerib 
+    //ja asendab mingeid elemente millegi järgi
+    massiiv.fill('naan');
+    massiiv.push('laim'); // lisab elemendi massiivi lõppu
+    massiiv.pop(); // tagastab viimase elemendi ja eemaldab selle massiivist
+    massiiv.unshift('ploom'); //lisab elemendi massiivi algusesse
+    massiiv.shift(); // tagastab esimese elemendi ja eemaldab selle massiivist
+    massiiv.includes('naan', 2); // hakkab otsima elementi naan alates kolmandast elemendist
+    console.log(massiiv3.find(function (element) { return element.startsWith('ap'); }));
+    console.log(massiiv);
+    console.log(massiiv3.toLocaleString());
+    console.log(massiiv3.join(', '));
+    /* Muu massiivi töötlus */
+    massiiv3.every(function (element) { return element[0] === element[0].toUpperCase(); });
+    massiiv3.some(function (element) { return element[0] === element[0].toUpperCase(); });
+    /* Sorteerimine */
+    massiiv3.sort(); //defaultis sorteerib Ascii kasvavas järjekorras
+    massiiv3.reverse(); // pöörab massiivi järjekorra tagurpidi
+    // reduce reduceRight
+    var astmesNumbrid2 = [[1, 2], [4, 7], [9, 5]];
+    var numbrid2 = astmesNumbrid2.reduce(function (a, b) { return a.concat(b); });
+    var ruudud = [9, 100, 81, 64, 49];
+    console.log(numbrid2);
+    numbrid2.forEach(function (element) { return console.log(element); });
+    console.log(ruudud.map(Math.sqrt));
+    numbrid2 = ruudud.filter(function (arv) { return arv > 10; });
+    // enries, values, keys
+    var iterator = numbrid2.entries();
+    console.log(iterator.next().value);
+    console.log(iterator.next().value);
+    var iterator2 = numbrid2.keys();
+    console.log(iterator2.next().value);
+    console.log(iterator2.next().value);
+    /*
+    const iterator3 = numbrid2.values();
+    console.log(iterator3.next().value);
+    console.log(iterator3.next().value);
+    */
+    /* Map ja Set */
+    var map = new Map([['T', 25], ['P', 55], ['C', 896]]);
+    map.set('S', 84123);
+    map.set('P', 3);
+    map.delete('C');
+    console.log(map.size); // annab mapis olevate elementide arvu
+    map.has('P'); // kontrollib kas map-s on element võtmega P ja tagastab true/false
+    map.get('P'); // 3
+    for (var _i = 0, _a = Array.from(map); _i < _a.length; _i++) {
+        var _b = _a[_i], key = _b[0], value = _b[1];
+        console.log(key + ': ' + value);
+    }
+    /* Functions */
+    function funk(param, param2, param3) {
+        //console.log(this.samm);
+        return param + param2 + param3;
+    }
+    console.log(funk.name + " " + funk.length);
+    var See = (function () {
+        function See() {
+            this.samm = 5;
+            // kasuta ainult kui vaja manipuleerida "this"
+            funk.apply(this, [3, 2, 7]); // ei kutsu funktsiooni
+            funk.bind(undefined, 9, 5, 3); // ei kutsu funktsiooni
+            funk.call(this, 1, 2, 3); // kutsub funktsiooni, võrdväärne funk(1,2,3);
+        }
+        return See;
+    }());
+    /* DOM (Document Object Model) */
+    /* Elementide kättesaamine */
+    var element = document.getElementById('pealkiri');
+    var elements = document.getElementsByClassName('btn-cancel');
+    var elements1 = document.getElementsByTagName('article');
+    var element2 = document.querySelector('body article'); // otsiva css queryde abil tagastab ainult esimese nimetatud elemendi
+    var elements2 = document.querySelectorAll('body article'); // otsiva css queryde abil tagastab listi
+    // $('body article'); // jquery
+    elements.item(0);
+    elements1.item(0);
+    //Halvemad alternatiivid eventlistenerile
+    elements.item(0).onclick = function (event) { alert(event); };
 })(Teine || (Teine = {}));
 //# sourceMappingURL=teine.js.map
