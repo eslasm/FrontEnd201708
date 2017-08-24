@@ -68,7 +68,7 @@ namespace Teine {
     Math.abs(-5);
     // A Math.sign(-5) -1 tagastab positiivset või negatiivset märki
 
-    Math.sin(pi); // sin(180)
+    Math.sin(pi); // Sin(180)
     /* Math.sin(), Math.cos(), Math.tan() */
     /* Arc Mathc.asin(), Math.acos(), Math.atan() */
 
@@ -90,7 +90,7 @@ namespace Teine {
         const absB = Math.abs(b);
         const diff = Math.abs(a - b);
         // tslint:disable-next-line:triple-equals
-        if(a == b) { // Infinity
+        if (a == b) { // Infinity
             return true;
         // tslint:disable-next-line:triple-equals
         } else if (a == 0 || b == 0 || diff < Number.MIN_SAFE_VALUE) {
@@ -177,3 +177,128 @@ console.log(s6neMassiiv);
 const re = /(\w+)\s(\w+)/;
 const nimi = 'Anna Lytsepp';
 console.log(nimi.replace(re, '$2, $1')); /* Tamm, Juku */
+
+/* Massiivid */
+let massiiv = ['õun', 'pirn', 'banaan', 'sidrun'];
+const massiiviPikkus = massiiv.length;
+// Const massiiv2 = Array.from(massiiv);
+let massiiv3 = new Array('õun', 'pirn', 'banaan', 'sidrun');
+// Const massiiv3 = Array.of('õun', 'pirn', 'banaan', 'sidrun');
+// Ühe elemendi puhul esimene loob ikka massiivi, aga teine tagastab sama elemendi.
+Array.isArray(massiiv); // Kas on massiiv
+massiiv3 = massiiv3.concat(massiiv);
+// Massiiv3 = massiiv3.slice(2, 5); // Kopeerib lihtsalt elemendid ümber
+massiiv = massiiv3.splice(2, 3); // Eemaldatud elemendid lisatakse teise massiivi
+// Massiiv3.copyWithin(2, 1, 3); // Kopeerib juba massiivi sees
+massiiv.fill('purk'); // Massiiv.fill('', 0, 10);
+console.log(massiiv3);
+// Lisamine ja eemaldamine
+massiiv3.push('apelsin'); // Lisab lõppu
+massiiv3.pop(); // Apelsin
+massiiv3.unshift('ploom');
+massiiv3.shift(); // Ploom
+// Otsing
+massiiv3.includes('sidrun', 2); // True
+massiiv3.indexOf('sidrun', 2); // Asukoht 4
+massiiv3.lastIndexOf('sidrun');
+
+console.log(massiiv3.findIndex((element) => element.startsWith('ba')));
+console.log(massiiv3.find((element) => element.startsWith('ba')));
+
+// Kuvamine
+massiiv3.toString();
+massiiv3.toLocaleString();
+console.log(massiiv3.join('-:-'));
+
+// Muu massiiv
+massiiv3.every((element) => typeof element[0] === element[0].toLowerCase()); // Kõik elemendid
+massiiv3.some((element) => typeof element[0] === element[0].toUpperCase()); // Vähemalt üks
+
+// Sorteerimine
+massiiv3.sort(); // Sorteerib arv > suur täht > väike täht
+let numbrid = [2, 4, 5, 1, 7];
+numbrid.sort((a: number, b: number) => {
+    console.log(`a: ${a}, b: ${b}`);
+
+    return b - a;
+});
+console.log(numbrid);
+massiiv3.reverse(); // Pöörab olemasoleva massiivi pahupidi
+
+// Reduce reduceRight
+const astmesNumbrid2 = [[1, 2], [4, 7], [8, 9]];
+let numbrid2 = astmesNumbrid2.reduce((a, b) => a.concat(b));
+console.log(numbrid2);
+
+// Map, filter
+numbrid2 = numbrid2.map(Math.sqrt);
+numbrid2 = numbrid2.filter((arv) => arv > 2);
+
+// Keys, values, entries
+let iterator = numbrid.entries(); // Iterator on massiivi sisse ehitatud päis, mis asub mingi elemendi kohal
+for (const entry of iterator) {
+    console.log(entry);
+}
+console.log(iterator.next().value);
+console.log(iterator.next().value);
+
+const iterator2 = numbrid.keys();
+console.log(iterator2.next().value);
+console.log(iterator2.next().value);
+
+const iterator3 = numbrid.values();
+console.log(iterator3.next().value);
+console.log(iterator3.next().value);
+
+// Numbrid.forEach((element) => { console.log(element); });
+console.log(numbrid2);
+
+/* Map ja Set */
+const map = new Map([['T', 25], ['P', 32], ['L', 21]]);
+map.set('S', 5);
+map.set('P', 21);
+map.delete('L');
+// Map.clear(); // kustutab kõik
+
+map.has('T'); // True
+map.get('T'); // 25
+// Map.forEach((el) => { })
+
+// Values and entries sarnaselt array`le
+for (const [key, value] of Array.from(map)) {
+    console.log(`${key}: ${value}`);
+    }
+console.log(map.size); //  Elementide arv
+
+/* Functions */
+function funk(param: number, param2: number, param3: number) {
+    console.log(this.samm);
+    return param + param2 + param3;
+}
+console.log(`${funk.name} ${funk.length}`);
+
+class See {
+    public samm = 5;
+    constructor() {
+        // Kasutada ainult kui vaja manipuleerida this
+        funk.apply(this, [3, 2, 1]); // Need ei kutsu funktsiooni
+        funk.bind(this, 1, 3, 2); // Need ei kutsu funktsiooni
+        funk.call(this, 1, 2, 3); // On võrdväärne funk(1,2,3); see kutsub funktsiooni
+        // () => { }
+    }
+}
+
+/* DOM */
+let element = document.getElementById('pealkiri') as HTMLHeadingElement | null;
+let elements = document.getElementsByClassName('btn-cancel'); // Tagastab listi
+let elements1 = document.getElementsByTagName('article'); // Tagastab listi
+let element2 = document.querySelector('body article'); // Tagastab ainult esimest elementi
+let elements2 = document.querySelectorAll('body article'); // Css queryde abil // tagastab listi
+// $('body article'); //jquery
+
+elements.item(0);
+elements1.item(0);
+
+// Halvemad alternatiivid eventlisteneritele
+(elements.item(0) as HTMLElement).onclick = (event) => { alert(event); };
+}
