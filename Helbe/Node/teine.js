@@ -156,5 +156,126 @@ var Teine;
     var nimi = 'Juku Tamm';
     console.log(nimi.replace(re, '$2, $1')); // kirjutab teise osa enne ja siis esimese
     // regex on väga efektiivne otsingusüsteemis, aga keerline
+    /* Massiivid */
+    var massiiv = ['õun', 'pirn', 'banaan', 'sidrun']; // ilma array-ta ja array annavad sama tulemuse
+    // const massiiviPikkus = massiiv.length;
+    // const massiiv2 = Array.from(massiiv) tekst tähe kaupa
+    //const massiiv3 = new Array ('õun', 'pirn', 'banaan', 'sidrun'); //Array on massiiv, kasut keerulisema vormingu puhul
+    var massiiv3 = Array.of('õun', 'pirn', 'banaan', 'sidrun');
+    // ühe elemendi puhul array loob ikka massiivi aga Array.fo tagastab elemendi
+    //const massiiv3 = new Array<string>('õun', 'pirn', 'banaan', 'sidrun'); //üks kasutus, et ära määrata sisu tüübid, string näiteks
+    Array.isArray(massiiv); // kontrollib kas tegu on massiiviga
+    massiiv3 = massiiv3.concat(massiiv);
+    console.log(massiiv3);
+    massiiv3 = massiiv.splice(2, 3); // mõjutab massiivi ennast eemaldab elemente ja lisab need teise massiivi
+    console.log(massiiv);
+    console.log(massiiv3);
+    // massiiv3 = massiiv.slice(2,3); // mõjutab massiivi ennast eemaldab elemente ja kustutab need!
+    var massiiv3 = massiiv3.concat(massiiv); //loodab massiivid
+    // massiiv3.copyWithin(2, 1, 3); // lubab kopeerida ümber seda väärtust mis on massiivi sees, teeb seda juba massiivis
+    console.log(massiiv3);
+    massiiv.fill('kass', 0, 10); // täiadb kohast kohani
+    console.log(massiiv);
+    massiiv3.push('apelsin '); // lisab loppu
+    console.log(massiiv3);
+    massiiv3.pop(); // eemaldab lopust
+    console.log(massiiv3);
+    massiiv3.unshift('loom'); //lisab algusesse
+    console.log(massiiv3);
+    massiiv3.shift(); // eemaldab algusest
+    console.log(massiiv3);
+    /* otsing */
+    massiiv3.includes('sidrun', 2); // kas massiiv sisaldab seda elementi
+    massiiv3.indexOf('sidrun', 2); // asukoht 4
+    massiiv3.lastIndexOf('sidrun'); // kui vaja otsida viimati lisatud elemente
+    massiiv3.findIndex(function (element) { return element.startsWith('ba'); });
+    ; // findIndex tagastab elemendi mis algab ba selle koha
+    console.log(massiiv3.find(function (element) { return element.startsWith('ba'); })); //find tagastab elemendi mis algab ba
+    /* kuvamine */
+    console.log(massiiv3.toString()); // kasut kuvamiseks
+    console.log(massiiv3.toLocaleString());
+    console.log(massiiv3.join('-:-')); // näitab kuidas kuvada
+    /* muu massiiv */
+    massiiv3.every(function (element) { return typeof element === 'string'; }); // kontrollib kas koik elemendid vastavad tingimustele
+    massiiv3.every(function (element) { return element[0] === element[0].toLowerCase(); }); // every kontrollib kas koik elemendid algavad väiketähega, käib koik elemendid läbi
+    massiiv3.some(function (element) { return element[0] === element[0].toLowerCase(); }); //some kontrollib kas vähemalt üks vastab tingimustele, some on kiirem
+    /* sorteerimine */
+    massiiv3.sort(); // vaikimisi sorteerib koigepealt numbrid, siis suurtähed ja siis väiketähed tähestiku järjekorras
+    console.log(massiiv3.reverse()); // pöörab massiivi pahupidi 
+    var numbrid = [2, 4, 5, 1, 7];
+    numbrid.sort(function (a, b) { return a - b; });
+    console.log(numbrid);
+    var numbreid = [2, 4, 5, 1, 7]; // näide kuidas sorteerida
+    numbrid.sort(function (a, b) {
+        console.log("a: " + a + ", " + b);
+        return b - a;
+    });
+    console.log(numbreid);
+    //numbrid.forEach((element) => {console.log(element); });
+    // reduce reduceRight - teeb maatriksist massiivi
+    var astmesnumbrid2 = [[1, 2], [4, 7], [8, 9]];
+    var numbrid2 = astmesnumbrid2.reduceRight(function (a, b) { return a.concat(b); });
+    console.log(numbrid2);
+    // map, filter
+    numbrid2 = numbrid2.map(Math.sqrt); //map ei rakendu enne kuiselle kutsume välja
+    numbrid2 = numbrid2.filter(function (arv) { return arv > 2; }); //filtreerib välja spetsiifiliste tingimustega asjad
+    console.log(numbrid2);
+    // keys, values, entries
+    var iterator = numbrid.entries(); //iterator massiivi sisse ehitatud päis, mis asub mingi elemendi kohal, seda nihutatakse. 
+    console.log(iterator.next().value); //näitab mitmes koht ja selle väärtus, next liigub iga kord edasi 
+    console.log(iterator.next().value);
+    console.log(iterator.next().value);
+    var iterator2 = numbrid.keys(); //
+    console.log(iterator2.next().value); // ainult kohad
+    console.log(iterator2.next().value);
+    console.log(iterator2.next().value);
+    var iterator3 = numbrid.values(); //
+    console.log(iterator3.next().value); // ainult sisu
+    console.log(iterator3.next().value);
+    console.log(iterator3.next().value);
+    /* Map ja Set */
+    var map = new Map([['T', 25], ['P', 32], ['L', 21]]); // need on natuke erinevad massivist näit võti T sellele vastab väärtus 25
+    map.set('S', 5);
+    map.set('P', 21);
+    map.delete('L');
+    //map.clear(); //kustutab kõik
+    for (var _i = 0, _a = Array.from(map); _i < _a.length; _i++) {
+        var _b = _a[_i], key = _b[0], value = _b[1];
+        console.log(key + ": " + value);
+    }
+    console.log(map.size); // map.size annab elementide arvu
+    map.has('T'); // true,  vaatab kas on mapis, tagastab booleani
+    map.get('T'); // 25, annab T väärtuse
+    // map.forEach((el) => {});
+    // values ja entries käituvad sarnaselt arrayle
+    // set ja map peaaegu samad
+    /* functions*/
+    function funk(param, param2, param3) {
+        return param + param2 + param3;
+    }
+    console.log(funk.name + " " + funk.length); //tagastab nime ja argumentide arvu
+    var See = (function () {
+        function See() {
+            this.samm = 5;
+            // kasutad aainult kui manipuleerida this 
+            funk.apply(this, [3, 2, 1]); // kautab arrayd
+            funk.bind(this, 1, 3, 2); // need ei kutsu funktsiooni, lihtsalt rakendab
+            funk.call(this, 1, 2, 3); // this kasut nuppudega tegeledes, saab konteksti määrata
+            // () => {}
+        }
+        return See;
+    }());
+    //funk.call(1, 2, 3); //funk(1, 2, 3)
+    /* DOM - document object model */
+    var element = document.getElementById('pealkiri'); // tagastab ühe elemendi
+    var elements = document.getElementsByClassName('btn-cancel'); // tagastab listi
+    var elements1 = document.getElementsByTagName('article'); // tagastab listi
+    var element2 = document.querySelector('body article'); // tagastab esimese elemendi 
+    var elements2 = document.querySelectorAll('body article'); // scc queryde abil
+    // $('body article') // jquery element, toimib samamoodi kui eelmine
+    elements.item(0);
+    elements1.item(0);
+    // events näit my event listener ja halvemad alternatiivis sellele
+    elements.item(0).onclick = function (event) { alert(event); };
 })(Teine || (Teine = {}));
 //# sourceMappingURL=teine.js.map

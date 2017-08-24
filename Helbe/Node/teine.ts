@@ -154,4 +154,138 @@ namespace Teine {
     const nimi = 'Juku Tamm';
     console.log(nimi.replace(re, '$2, $1')); // kirjutab teise osa enne ja siis esimese
     // regex on väga efektiivne otsingusüsteemis, aga keerline
+
+    /* Massiivid */
+    const massiiv = ['õun', 'pirn', 'banaan', 'sidrun']; // ilma array-ta ja array annavad sama tulemuse
+    // const massiiviPikkus = massiiv.length;
+    // const massiiv2 = Array.from(massiiv) tekst tähe kaupa
+    //const massiiv3 = new Array ('õun', 'pirn', 'banaan', 'sidrun'); //Array on massiiv, kasut keerulisema vormingu puhul
+    const massiiv3 = Array.of('õun', 'pirn', 'banaan', 'sidrun');
+    // ühe elemendi puhul array loob ikka massiivi aga Array.fo tagastab elemendi
+    //const massiiv3 = new Array<string>('õun', 'pirn', 'banaan', 'sidrun'); //üks kasutus, et ära määrata sisu tüübid, string näiteks
+    Array.isArray(massiiv); // kontrollib kas tegu on massiiviga
+    massiiv3 = massiiv3.concat(massiiv);
+    console.log(massiiv3);
+    massiiv3 = massiiv.splice(2,3); // mõjutab massiivi ennast eemaldab elemente ja lisab need teise massiivi
+    console.log(massiiv);
+    console.log(massiiv3); 
+    // massiiv3 = massiiv.slice(2,3); // mõjutab massiivi ennast eemaldab elemente ja kustutab need!
+    const massiiv3 = massiiv3.concat(massiiv); //loodab massiivid
+    // massiiv3.copyWithin(2, 1, 3); // lubab kopeerida ümber seda väärtust mis on massiivi sees, teeb seda juba massiivis
+    console.log(massiiv3);
+    massiiv.fill('kass', 0, 10); // täiadb kohast kohani
+    console.log(massiiv);
+    massiiv3.push('apelsin '); // lisab loppu
+    console.log(massiiv3);
+    massiiv3.pop(); // eemaldab lopust
+    console.log(massiiv3);
+    massiiv3.unshift('loom'); //lisab algusesse
+    console.log(massiiv3);
+    massiiv3.shift(); // eemaldab algusest
+    console.log(massiiv3);
+
+    /* otsing */
+    massiiv3.includes('sidrun', 2); // kas massiiv sisaldab seda elementi
+    massiiv3.indexOf('sidrun', 2); // asukoht 4
+    massiiv3.lastIndexOf('sidrun'); // kui vaja otsida viimati lisatud elemente
+    massiiv3.findIndex((element) => element.startsWith('ba'))); // findIndex tagastab elemendi mis algab ba selle koha
+    console.log(massiiv3.find((element) => element.startsWith('ba'))); //find tagastab elemendi mis algab ba
+
+    /* kuvamine */
+    console.log(massiiv3.toString()); // kasut kuvamiseks
+    console.log(massiiv3.toLocaleString());
+    console.log(massiiv3.join('-:-')); // näitab kuidas kuvada
+    
+    /* muu massiiv */
+    massiiv3.every((element) => typeof element === 'string'); // kontrollib kas koik elemendid vastavad tingimustele
+    massiiv3.every((element) => element[0] === element[0].toLowerCase()); // every kontrollib kas koik elemendid algavad väiketähega, käib koik elemendid läbi
+    massiiv3.some((element) => element[0] === element[0].toLowerCase()); //some kontrollib kas vähemalt üks vastab tingimustele, some on kiirem
+
+    /* sorteerimine */
+    massiiv3.sort(); // vaikimisi sorteerib koigepealt numbrid, siis suurtähed ja siis väiketähed tähestiku järjekorras
+    console.log(massiiv3.reverse()); // pöörab massiivi pahupidi 
+    let numbrid = [2, 4, 5, 1, 7];
+    numbrid.sort((a: number, b: number) => a - b);
+    console.log(numbrid)
+    
+    let numbreid = [2, 4, 5, 1, 7]; // näide kuidas sorteerida
+    numbrid.sort((a: number, b: number) => {
+        console.log(`a: ${a}, ${b}`);
+        return b - a;
+    });
+    console.log(numbreid)
+    
+    //numbrid.forEach((element) => {console.log(element); });
+    
+
+    // reduce reduceRight - teeb maatriksist massiivi
+    const astmesnumbrid2 = [[1, 2], [4, 7], [8, 9]];
+    let numbrid2 = astmesnumbrid2.reduceRight((a, b) => a.concat(b));
+    console.log(numbrid2);
+
+    // map, filter
+    numbrid2 = numbrid2.map(Math.sqrt); //map ei rakendu enne kuiselle kutsume välja
+    numbrid2 = numbrid2.filter((arv) => arv > 2); //filtreerib välja spetsiifiliste tingimustega asjad
+    console.log(numbrid2);
+    
+    // keys, values, entries
+    const iterator = numbrid.entries(); //iterator massiivi sisse ehitatud päis, mis asub mingi elemendi kohal, seda nihutatakse. 
+    console.log(iterator.next().value) //näitab mitmes koht ja selle väärtus, next liigub iga kord edasi 
+    console.log(iterator.next().value)
+    console.log(iterator.next().value)
+
+    const iterator2 = numbrid.keys(); //
+    console.log(iterator2.next().value) // ainult kohad
+    console.log(iterator2.next().value)
+    console.log(iterator2.next().value)
+
+    const iterator3 = numbrid.values(); //
+    console.log(iterator3.next().value) // ainult sisu
+    console.log(iterator3.next().value)
+    console.log(iterator3.next().value)
+    
+    /* Map ja Set */
+    const map = new Map([['T', 25], ['P', 32], ['L', 21]]); // need on natuke erinevad massivist näit võti T sellele vastab väärtus 25
+    map.set('S', 5);
+    map.set('P', 21);
+    map.delete('L');
+    //map.clear(); //kustutab kõik
+    for (const [key, value] of Array.from(map)){ // kasutab teistsugust tsüklit. key ja value on destructorid ehk lammutab selle kaheks tükiks
+        console.log(`${key}: ${value}`);
+    } 
+    console.log(map.size); // map.size annab elementide arvu
+    map.has('T') // true,  vaatab kas on mapis, tagastab booleani
+    map.get('T') // 25, annab T väärtuse
+    // map.forEach((el) => {});
+    // values ja entries käituvad sarnaselt arrayle
+    // set ja map peaaegu samad
+
+    /* functions*/
+    function funk(param: number, param2: number, param3: number){ // parameeter number
+        return param + param2 + param3;
+    }
+    console.log(`${funk.name} ${funk.length}`); //tagastab nime ja argumentide arvu
+    
+    class See {
+        public samm = 5;
+        constructor(){
+            // kasutad aainult kui manipuleerida this 
+            funk.apply(this, [3, 2, 1]); // kautab arrayd
+            funk.bind(this, 1, 3, 2); // need ei kutsu funktsiooni, lihtsalt rakendab
+            funk.call(this, 1, 2, 3); // this kasut nuppudega tegeledes, saab konteksti määrata
+            // () => {}
+        }
+    }
+    //funk.call(1, 2, 3); //funk(1, 2, 3)
+    /* DOM - document object model */
+    let element = document.getElementById('pealkiri') as HTMLHeadingElement | null; // tagastab ühe elemendi
+    let elements = document.getElementsByClassName('btn-cancel'); // tagastab listi
+    let elements1 = document.getElementsByTagName('article'); // tagastab listi
+    let element2 = document.querySelector('body article'); // tagastab esimese elemendi 
+    let elements2 = document.querySelectorAll('body article'); // scc queryde abil
+    // $('body article') // jquery element, toimib samamoodi kui eelmine
+    elements.item(0);
+    elements1.item(0);
+    // events näit my event listener ja halvemad alternatiivis sellele
+    (elements.item(0) as HTMLElement).onclick = (event) => {alert(event); };
 } 
