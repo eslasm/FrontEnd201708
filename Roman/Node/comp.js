@@ -216,4 +216,8 @@ var Algus;
     minuKoer.viskaKont();
     minuKoer.kasKontiOtsib();
 })(Algus || (Algus = {}));
-//# sourceMappingURL=algus.js.map
+Algus.Loom.prindiHulk();
+/// <reference path='algus.ts'/>
+// tere teine fail
+Algus.Loom.prindiHulk();
+//# sourceMappingURL=tsc.js.map

@@ -212,4 +212,3 @@ namespace Algus {
     minuKoer.viskaKont();
     minuKoer.kasKontiOtsib();
 }
-Algus.Loom.prindiHulk();
