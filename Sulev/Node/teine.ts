@@ -246,5 +246,6 @@ namespace Teine{
 
         //Halvemad alternatiivid eventlistenerile
         (elements.item(0)as HTMLElement).onclick = (event) => { alert(event); };
+        
 
 }
