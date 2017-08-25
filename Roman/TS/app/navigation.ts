@@ -45,6 +45,7 @@ class Navigation {
                 navLinks += parsePass3;
             }
         );
+        this._list.innerHTML = navLinks;
     }
 
     private _urlChanged(e) {
