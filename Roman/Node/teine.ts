@@ -182,4 +182,122 @@ namespace Teine {
     const nimi = 'Juku Tamm';
     console.log(nimi.replace(re, '$2, $1')); /* Tamm, Juku */
 
+    /* Massiivid */
+    let massiiv = ['õun', 'pirn', 'banaan', 'sidrun'];
+    const massiiviPikkus = massiiv.length;
+    // const massiiv2 = Array.from(massiiv);
+    let massiiv3 = new Array('õun', 'pirn', 'banaan', 'sidrun');
+    // const massiiv3 = Array.of('õun', 'pirn', 'banaan', 'sidrun');
+    // ühe elemendi puhul esimene loob ikka massiivi aga teine tagastab sama elemendi
+    Array.isArray(massiiv); // kas on massiiv
+    massiiv3 = massiiv3.concat(massiiv);
+    // massiiv3 = massiiv3.slice(2, 5); // kopeerib osa elemente
+    massiiv = massiiv3.splice(2, 3); // eemaldatud elemendid lisatakse teise massiivi
+    // massiiv3.copyWithin(2, 1, 3); // kopeerib juba massiivi sees
+    massiiv.fill('', 0, 10);
+    console.log(massiiv3);
+    // lisamine ja eemaldamine
+    massiiv3.push('apelsin'); // lisab lõppu
+    massiiv3.pop(); // apelsin
+    massiiv3.unshift('ploom');
+    massiiv3.shift(); // ploom
+    // otsing
+    massiiv3.includes('sidrun', 2); // true
+    massiiv3.indexOf('sidrun', 2); // asukoht 4
+    massiiv3.lastIndexOf('sidrun');
+
+    console.log(massiiv3.findIndex((element) => element.startsWith('ba')));
+    console.log(massiiv3.find((element) => element.startsWith('ba')));
+
+    // kuvamine
+    massiiv3.toString();
+    massiiv3.toLocaleString();
+    console.log(massiiv3.join('-:-'));
+
+    // muu massiiv
+    massiiv3.every((element) => element[0] === element[0].toLowerCase()); // kõik elemendid
+    massiiv3.some((element) => element[0] === element[0].toUpperCase()); // vähemalt üks
+
+    // sorteerimine
+    massiiv3.sort(); // sorteerib arv > suur täht > väike täht
+    const numbrid = [2, 4, 5, 1, 7];
+    numbrid.sort((a: number, b: number) => {
+        console.log(`a: ${a}, b: ${b}`);
+
+        return b - a;
+    });
+    console.log(numbrid);
+    massiiv3.reverse(); // pöörab olema oleva massiivi pahupidi
+
+    // reduce reduceRight
+    const astemesNumbrid2 = [[1, 2], [4, 7], [8, 9]];
+    let numbrid2 = astemesNumbrid2.reduceRight((a, b) => a.concat(b));
+
+    // map, filter
+    numbrid2 = numbrid2.map(Math.sqrt);
+    numbrid2 = numbrid2.filter((arv) => arv > 2);
+
+    // keys, values, entries
+    const iterator = numbrid.entries();
+    console.log(iterator.next().value);
+    console.log(iterator.next().value);
+
+    const iterator2 = numbrid.keys();
+    console.log(iterator2.next().value);
+    console.log(iterator2.next().value);
+
+    const iterator3 = numbrid.values();
+    console.log(iterator3.next().value);
+    console.log(iterator3.next().value);
+
+    // numbrid.forEach((element) => { console.log(element); });
+    console.log(numbrid2);
+
+    /* Map ja Set */
+    const map = new Map([['T', 25], ['P', 32], ['L', 21]]);
+    map.set('S', 5);
+    map.set('P', 21);
+    map.delete('L');
+    // map.clear(); //kustutab kõik
+
+    map.has('T'); // true
+    map.get('T'); // 25
+    // map.forEach((el) => { });
+
+    // values and entries sarnaselt arrayle
+    for (const [key, value] of Array.from(map)) {
+        console.log(`${key}: ${value}`);
+    }
+    console.log(map.size); // elementide arv
+
+    /* functions */
+    function funk(param: number, param2: number, param3: number) {
+        return param + param2 + param3;
+    }
+    console.log(`${funk.name} ${funk.length}`);
+
+    class See {
+        public samm = 5;
+        constructor() {
+            // kasutada ainult kui vaja manipuleerida this
+            funk.apply(this, [3, 2, 1]); // need ei kutsu funktsiooni
+            funk.bind(undefined, 1, 3, 2); // need ei kutsu funktsiooni
+            funk.call(this, 1, 2, 3); // see kutsub, funk(1,2,3);
+            // () => { }
+        }
+    }
+
+    /* DOM */
+    let element = document.getElementById('pealkiri') as HTMLHeadingElement | null;
+    let elements = document.getElementsByClassName('btn-cancel');
+    let elements1 = document.getElementsByTagName('article');
+    let element2 = document.querySelector('body article'); // tagastab esimest elementi
+    let elements2 = document.querySelectorAll('body article'); // css queryde abil
+    // $('body article'); //jquery
+
+    elements.item(0);
+    elements1.item(0);
+
+    // halvemad alternatiivid eventlisteneritele
+    (elements.item(0) as HTMLElement).onclick = (event) => { alert(event); };
 }
