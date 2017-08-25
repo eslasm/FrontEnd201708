@@ -1,0 +1,20 @@
+{
+    "name": "front-end-201708",
+    "version": "1.0.0",
+    "description": "Frontend Study",
+    "main": "readme.MD",
+    "author": "Helbe",
+    "license": "ISC",
+    "dependencies": {
+        "bootstrap-v4-dev": "4.0.0-alpha.6"
+    },
+    "devDependencies": {
+        "lite-server": "2.3.0",
+        "typescript": "2.4.2",
+        "tslint": "5.6.0"
+    },
+    "scripts": {
+        "lite": "lite-server -port 3000",
+        "start": "npm run lite"
+    }
+}
