@@ -216,4 +216,15 @@ var Algus;
     minuKoer.viskaKont();
     minuKoer.kasKontiOtsib();
 })(Algus || (Algus = {}));
-//# sourceMappingURL=algus.js.map
+Algus.Loom.prindiHulk();
+/// <reference path='algus.ts'/>
+var Teine;
+(function (Teine) {
+    // tere teine fail
+    Algus.Loom.prindiHulk();
+    var pealkiri = document.getElementById("pealkiri");
+    if (pealkiri) {
+        pealkiri.innerText = "Tere Tulemast";
+    }
+})(Teine || (Teine = {}));
+//# sourceMappingURL=tsc.js.map
