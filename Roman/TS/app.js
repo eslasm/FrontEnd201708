@@ -116,6 +116,7 @@ var Navigation = (function () {
             var parsePass3 = Helper.parseHTMLString(parsePass2, '{{active}}', setActive);
             navLinks += parsePass3;
         });
+        this._list.innerHTML = navLinks;
     };
     Navigation.prototype._urlChanged = function (e) {
         this._render();
