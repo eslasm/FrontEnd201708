@@ -11,16 +11,14 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var Algus;
 (function (Algus) {
-    // Alert("Tere");
+    // alert("Tere");
     console.log('Tere tulemast2!');
-    // Alert("Tere");
-    console.log('Tere tulemast2!');
-    // Muutujad ja tyybid
+    /* muutujad ja tyybid */
     var kasOnMuutumatu = true;
     var kasOnMuudetav = true;
-    // KasOnMuutumatu = true;
+    // kasOnMuutumatu = false;
     kasOnMuudetav = true;
-    var t6ene = true;
+    var t6ene;
     t6ene = true;
     var arv;
     arv = 5;
@@ -37,14 +35,14 @@ var Algus;
         V2rv[V2rv["Kollane"] = 3] = "Kollane";
     })(V2rv || (V2rv = {}));
     var v2rv = V2rv.Punane;
-    // Let suvaline: any;
-    // Void, null ja underfined
+    // let suvaline: any;
+    // void, null ja undefined, never
     /* operaatorid */
     arv = 5 + 2;
     arv = 5 - 2;
-    arv = 5 * 2;
-    arv = 6 / 2;
-    console.log(arv); /*muutujate ümber jutumärke ei panda*/
+    arv = 5 * 2; // 10
+    arv = 6 / 2; // 3
+    console.log(arv);
     arv = arv + 4; // 7
     arv += 4; // 11
     arv %= 3; // 2 jääk
@@ -63,7 +61,9 @@ var Algus;
     console.log(s6ne);
     var a = 10;
     if (arv === 100) {
-        var a_1 = 0; // Potensiaalne shadowed variable
+        // tslint:disable-next-line:no-shadowed-variable
+        var a_1 = 0; // potentsiaalne shadowed variable
+        a_1 = 0;
         s6ne = 'Tere';
     }
     else if (arv < 100) {
@@ -72,22 +72,31 @@ var Algus;
     else {
         s6ne = '...';
     }
-    console.log(s6ne);
+    console.log(a);
     switch (arv) {
-        case 1:
+        case 100:
             s6ne = 'Tere';
             break;
         case 102:
         case 90:
             s6ne = 'Headaega';
+            break;
+        default:
+            s6ne = '...';
+    }
+    switch (v2rv) {
+        case 1:
+        case V2rv.Punane:
+            s6ne = 'Roheline või Punane';
+            break;
         default:
             s6ne = 'Muu värv';
     }
     if (s6ne !== 'Tere' && arv >= 0) {
-        s6ne = 'Tingimus täiedetud';
+        s6ne = 'Tingimus täidetud';
     }
-    // === on täpsem kui == sama ka !== !=
-    /* Tsüklid */
+    // === on täpsem kui ==  sama ka !== !=
+    /* Tsükklid */
     for (var i = 0; i < 5; ++i) {
         if (i === 3) {
             continue;
@@ -104,7 +113,7 @@ var Algus;
         arv++;
     }
     console.log(s6ne);
-    // Do while
+    // do while
     var massiiv2 = [4, 5, 6];
     var esimene = massiiv2[0];
     // tslint:disable-next-line:prefer-for-of
@@ -121,7 +130,7 @@ var Algus;
         }
     }
     /* funktsioon */
-    // tslint:disable-next-line:prefer-for-of
+    // tslint:disable-next-line:only-arrow-functions
     function liitmine(arv1, arv2) {
         if (arv1 === 10 || arv2 === 10) {
             return 10;
@@ -129,26 +138,30 @@ var Algus;
         return arv1 + arv2;
     }
     arv = liitmine(2, arv);
-    console.log("liitmine " + arv);
+    console.log("Liitmine " + arv);
+    // tslint:disable-next-line:arrow-return-shorthand
     var f = function (arv1, arv2) { return arv1 - arv2; };
-    f = function (arv1, arv2) { return arv1 - arv2; };
+    f = function (arv1, arv2) { return arv1 - arv2; }; // üherealised
     console.log(f(10, arv));
     var tulemus = f(11, arv);
-    /* nullable types */
+    /* nullable types, undefined */
     var arv3;
-    arv3 = null; // Seda ei ole soovitav kasutada
+    // tslint:disable-next-line:no-null-keyword
+    arv3 = null; // seda ei ole soovituslik kasutada
     var muutuja;
-    // Soovituslik määramata tüübi kontroll
+    // soovituslik määramata tüübi kontroll
     if (typeof muutuja === 'undefined') {
         console.log(typeof muutuja);
     }
-    /* typeof ja instance of */
+    /* typeof ja instanceof */
+    // tslint:disable-next-line:no-any
     var kasOnNumber = function (x) { return typeof x === 'number'; };
     console.log(kasOnNumber(4));
     /* objekt */
     var objekt = { eesnimi: 'Juku', perenimi: 'Tamm' };
     objekt.eesnimi = 'Kalle';
     var isikutootlus = function (isik) {
+        // isik.perenimi = 'Tamm';
         console.log("Nimi: " + isik.eesnimi + " " + isik.perenimi);
         if (isik.vanus) {
             console.log("Vanus: " + isik.vanus);
@@ -167,6 +180,7 @@ var Algus;
             console.log(Loom.hulk);
         };
         Loom.prototype.muudaNimetus = function (uusNimetus) {
+            if (uusNimetus === void 0) { uusNimetus = 'loom2'; }
             this.nimetus = uusNimetus;
         };
         Loom.prototype.kuvaNimetus = function () {
@@ -202,4 +216,15 @@ var Algus;
     minuKoer.viskaKont();
     minuKoer.kasKontiOtsib();
 })(Algus || (Algus = {}));
-//# sourceMappingURL=algus.js.map
+Algus.Loom.prindiHulk();
+/// <reference path='algus.ts'/>
+var Teine;
+(function (Teine) {
+    // tere teine fail
+    Algus.Loom.prindiHulk();
+    var pealkiri = document.getElementById("pealkiri");
+    if (pealkiri) {
+        pealkiri.innerText = "Tere Tulemast";
+    }
+})(Teine || (Teine = {}));
+//# sourceMappingURL=tsc.js.map

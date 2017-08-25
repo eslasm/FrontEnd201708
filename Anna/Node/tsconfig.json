@@ -4,6 +4,7 @@
         "newLine": "CRLF",
         "pretty": true,
         "diagnostics": true,
+        /*"outFile": "comp.js",*/
 
         "noFallthroughCasesInSwitch": true,
         "noUnusedParameters": true,
@@ -20,7 +21,7 @@
         "target": "es5",
         "module": "commonjs",
         "sourceMap": true,
-        "lib":[ "dom", "es5" ],
+        "lib":[ "dom", "es5", "es6", "es2016.array.include" ],
         "baseUrl": ".",
         "paths": {
             "*": ["*", "generated/*"]

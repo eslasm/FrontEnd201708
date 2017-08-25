@@ -14,3 +14,7 @@
     margin-right: auto;
     width: 640px;
 }
+#carouselExampleControls img{
+    width: 640px;
+    height: 360px;
+}

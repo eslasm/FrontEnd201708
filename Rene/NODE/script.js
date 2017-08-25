@@ -1,1 +1,2 @@
-console.log("Tere Tulemast");
+//alert("Tere");
+console.log("Tere tulemast!");
