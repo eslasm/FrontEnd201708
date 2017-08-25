@@ -14,7 +14,7 @@ namespace Helper {
         return templateHTML;
     };
 
-    export const parseHTMLString (target: string, moustache: string, content: string) {
+    export const parseHTMLString = (target: string, moustache: string, content: string) => {
         return target.replace(moustache, content);
     };
 }

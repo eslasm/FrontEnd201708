@@ -4,7 +4,7 @@
         "newLine": "CRLF",
         "pretty": true,
         "diagnostics": true,
-
+        
         "noFallthroughCasesInSwitch": true,
         "noUnusedParameters": true,
         "noUnusedLocals": true,

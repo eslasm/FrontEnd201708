@@ -1,17 +1,21 @@
 console.log('page.ts');
-/* Page */
-
+/**
+ * Page
+ */
 class Page {
-    constructor(){
+    constructor() {
         // tyhi
     }
-    protected _cahceDOM(){
+    // tslint:disable-next-line:prefer-function-over-method
+    protected _cacheDOM() {
         // tyhi
     }
-    protected _bindEvents(){
+    // tslint:disable-next-line:prefer-function-over-method
+    protected _bindEvents() {
         // tyhi
     }
-    protected _render(){
+    // tslint:disable-next-line:prefer-function-over-method
+    protected _render() {
         // tyhi
     }
 

@@ -29,67 +29,72 @@ var Helper;
     };
 })(Helper || (Helper = {}));
 console.log('page.ts');
-/* Page */
+/**
+ * Page
+ */
 var Page = (function () {
     function Page() {
         // tyhi
     }
-    Page.prototype._cahceDOM = function () {
+    // tslint:disable-next-line:prefer-function-over-method
+    Page.prototype._cacheDOM = function () {
         // tyhi
     };
+    // tslint:disable-next-line:prefer-function-over-method
     Page.prototype._bindEvents = function () {
         // tyhi
     };
+    // tslint:disable-next-line:prefer-function-over-method
     Page.prototype._render = function () {
         // tyhi
     };
     return Page;
 }());
-/// <reference path='helper.ts'/>
-/// <reference path='page.ts'/>
+/// <reference path='helper.ts' />
+/// <reference path='page.ts' />
 console.log('home.ts');
 var Home = (function (_super) {
     __extends(Home, _super);
     function Home() {
         var _this = _super.call(this) || this;
-        _this._cahceDOM();
+        _this._cacheDOM();
         _this._bindEvents();
         _this._render();
         return _this;
     }
-    Home.prototype._cahceDOM = function () {
-        this._template = Helper.getHTMLTemplate("templates/home-template.html");
+    Home.prototype._cacheDOM = function () {
+        this._template = Helper.getHTMLTemplate('templates/home-template.html');
         this._homeModule = document.querySelector('main');
-        this._homeModule = this._template;
+        this._homeModule.outerHTML = this._template;
         this._homeModule = document.getElementById('home');
         this._button = this._homeModule.querySelector('#refresh');
-        this._list = this._homeModule.querySelector('#restOutput');
+        this._text = this._homeModule.querySelector('#restOutput');
         this._refresh();
     };
     Home.prototype._bindEvents = function () {
         this._button.addEventListener('click', this._refresh.bind(this));
     };
     Home.prototype._render = function () {
-        this._list.innerHTML = "Id: " + this._restJSON.id + " Sisu " + this._restJSON.content;
+        this._text.innerHTML = "Id: " + this._restJSON.id + " Sisu: " + this._restJSON.content;
     };
     Home.prototype._refresh = function () {
-        var restAnwser = Helper.getHTMLTemplate('http://rest-service.guides.spring.io/greeting');
-        this._restJSON = JSON.parse(restAnwser);
+        var restAnswer = Helper.getHTMLTemplate('http://rest-service.guides.spring.io/greeting');
+        this._restJSON = JSON.parse(restAnswer);
         this._render();
     };
     return Home;
 }(Page));
-/// <reference path='helper.ts'/>
+/// <reference path='helper.ts' />
 console.log('navigation.ts');
 var Navigation = (function () {
     function Navigation(navs) {
         this._navs = navs;
-        this._cahceDOM();
+        this._cacheDOM();
         this._bindEvents();
         this._render();
     }
-    Navigation.prototype._cahceDOM = function () {
-        this._template = Helper.getHTMLTemplate("templates/nav-template.html");
+    Navigation.prototype._cacheDOM = function () {
+        this._template = Helper.getHTMLTemplate('templates/nav-template.html');
         this._navModule = document.getElementById('mainMenu');
         this._navModule.outerHTML = this._template;
         this._navModule = document.getElementById('mainMenu');
@@ -109,25 +114,29 @@ var Navigation = (function () {
             var parsePass3 = Helper.parseHTMLString(parsePass2, '{{active}}', setActive);
             navLinks += parsePass3;
         });
+        this._list.innerHTML = navLinks;
     };
     Navigation.prototype._urlChanged = function (e) {
         this._render();
     };
     return Navigation;
 }());
-/// <reference path='helper.ts'/>
-/// <reference path='navigation.ts'/>
-/// <reference path='home.ts'/>
+/// <reference path='helper.ts' />
+/// <reference path='navigation.ts' />
+/// <reference path='home.ts' />
 console.log('main.ts');
 var App = (function () {
     function App() {
         this._navLinks = [{ name: 'Pealeht', link: '#home' }];
         this._bindEvents();
         this._setup();
+        this._urlChanged();
     }
+    // tslint:disable-next-line:prefer-function-over-method
     App.prototype._bindEvents = function () {
         window.addEventListener('hashchange', this._urlChanged.bind(this));
     };
+    // tslint:disable-next-line:prefer-function-over-method
     App.prototype._setup = function () {
         if (window.location.hash === '') {
             window.location.hash = this._navLinks[0].link;
