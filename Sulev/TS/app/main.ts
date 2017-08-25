@@ -1,10 +1,14 @@
 /// <reference path='helper.ts' />
 /// <reference path='navigation.ts' />
 /// <reference path='home.ts' />
+/// <reference path='gallery.ts' />
 console.log('main.ts');
 
 class App {
-    private _navLinks: INavLink[] = [{name: 'Pealeht', link: '#home'}];
+    private _navLinks: INavLink[] = [
+        {name: 'Pealeht', link: '#home'}, 
+        {name : 'Galerii', link: '#gallery'}
+    ];
     private page: Page;
 
     constructor() {
@@ -33,6 +37,8 @@ class App {
                 if (window.location.hash === value.link) {
                     if (value.link === this._navLinks[0].link) {
                         this.page = new Home();
+                    } else if(value.link === this._navLinks[1].link) {
+                        this.page = new Gallery();
                     }
                 }
             }
