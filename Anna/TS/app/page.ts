@@ -4,18 +4,19 @@ console.log('page.ts');
  */
 class Page {
     constructor() {
-        // Tyhi
+        // tyhi
     }
     // tslint:disable-next-line:prefer-function-over-method
     protected _cacheDOM() {
-        // Tyhi
+        // tyhi
     }
     // tslint:disable-next-line:prefer-function-over-method
     protected _bindEvents() {
-        // Tyhi
+        // tyhi
     }
     // tslint:disable-next-line:prefer-function-over-method
     protected _render() {
-        // Tyhi
+        // tyhi
     }
+
 }

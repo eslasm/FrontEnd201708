@@ -9,13 +9,13 @@ interface IGreeting {
 
 class Home extends Page {
 
-    private_template: string;
-    private_restJSON: IGreeting;
-    private_homeModule: Element;
-    private_button: HTMLButtonElement;
-    private_list: Element;
+    private _template: string;
+    private _restJSON: IGreeting;
+    private _homeModule: Element;
+    private _button: HTMLButtonElement;
+    private _list: Element;
 
-    constructor(parameters) {
+    constructor() {
         super();
         this._cacheDOM();
         this._bindEvents();
@@ -23,23 +23,26 @@ class Home extends Page {
     }
 
     protected _cacheDOM() {
-        this._template = Helper.getHTMLTemplate("templates/home-template.html");
+        this._template = Helper.getHTMLTemplate('templates/home-template.html');
         this._homeModule = document.querySelector('main');
-        this._homeModule = this._template;
+        this._homeModule.outerHTML = this._template;
         this._homeModule = document.getElementById('home');
         this._button = this._homeModule.querySelector('#refresh') as HTMLButtonElement;
-        this._list = this._homeModule.querySelector('#restOutput');
+        this._text = this._homeModule.querySelector('#restOutput');
 
-        this._refresh()
+        this._refresh();
     }
     protected _bindEvents() {
         this._button.addEventListener('click', this._refresh.bind(this));
     }
     protected _render() {
-        this._list.innerHTML = `Id: ${this._restJSON.id} Sisu: ${this._restJSON.content}`;
+        this._text.innerHTML = `Id: ${this._restJSON.id} Sisu:${this._restJSON.content}`;
     }
     private _refresh() {
-        const restAnswer = Helper.getHTMLTemplate('http://rest-service.guides.spring.io/greeting');
+        const restAnswer =
+            Helper.getHTMLTemplate('http://rest-service.guides.spring.io/greeting');
         this._restJSON = JSON.parse(restAnswer) as IGreeting;
         this._render();
     }
+
+}
