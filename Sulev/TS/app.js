@@ -12,6 +12,23 @@ var __extends = (this && this.__extends) || (function () {
 var Helper;
 (function (Helper) {
     console.log('helper.ts');
+    Helper.getParameterByName = function (name) {
+        var url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&'); // keerukamate nimetuste korral
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+        var result = regex.exec(url);
+        if (!result) {
+            return undefined;
+        }
+        if (!result[2]) {
+            return '';
+        }
+        // console.log(result[2]);
+        return decodeURIComponent(result[2].replace(/\+/g, ' '));
+    };
+    Helper.removeParams = function () {
+        window.location.href = window.location.origin + window.location.hash;
+    };
     Helper.getHTMLTemplate = function (file) {
         var templateHTML = 'fail';
         var xmlHttp = new XMLHttpRequest();
@@ -50,6 +67,51 @@ var Page = (function () {
     };
     return Page;
 }());
+/// <reference path='helper.ts' />
+/// <reference path='page.ts' />
+var EventPage = (function (_super) {
+    __extends(EventPage, _super);
+    function EventPage() {
+        var _this = _super.call(this) || this;
+        _this._cacheDOM();
+        _this._bindEvents();
+        _this._render();
+        return _this;
+    }
+    EventPage.prototype._cacheDOM = function () {
+        this._template = Helper.getHTMLTemplate('templates/event-template.html');
+        this._peopleModule = document.querySelector('main');
+        this._peopleModule.outerHTML = this._template;
+        this._peopleModule = document.getElementById('event');
+        this._microTemplate = this._peopleModule.querySelector('script').innerText;
+        this._list = this._peopleModule.querySelector('ul');
+    };
+    EventPage.prototype._bindEvents = function () {
+        this._list.addEventListener('click', this._deletePerson.bind(this));
+    };
+    EventPage.prototype._render = function () {
+        var _this = this;
+        this._participants = JSON.parse(localStorage.getItem('people'));
+        var people = '';
+        this._participants.forEach(function (value) {
+            var parsePass1 = Helper.parseHTMLString(_this._microTemplate, '{{name}}', value.name);
+            var parsePass2 = Helper.parseHTMLString(parsePass1, '{{joined}}', value.joined);
+            people += parsePass2;
+        });
+        this._list.innerHTML = people;
+    };
+    EventPage.prototype._deletePerson = function (e) {
+        if (e.target && e.target.nodeName === 'BUTTON') {
+            var element = e.target.parentElement;
+            var parent_1 = element.parentElement;
+            var index = Array.prototype.indexOf.call(parent_1.children, element);
+            this._participants.splice(index, 1); //kustutab html-s ;
+            localStorage.setItem('people', JSON.stringify(this._participants)); // see kustutab andmebaasist andmed
+            this._render();
+        }
+    };
+    return EventPage;
+}(Page));
 /// <reference path='helper.ts' />
 /// <reference path='page.ts' />
 console.log('gallery.ts');
@@ -173,12 +235,14 @@ var Navigation = (function () {
 /// <reference path='navigation.ts' />
 /// <reference path='home.ts' />
 /// <reference path='gallery.ts' />
+/// <reference path='eventPage.ts' />
 console.log('main.ts');
 var App = (function () {
     function App() {
         this._navLinks = [
             { name: 'Pealeht', link: '#home' },
-            { name: 'Galerii', link: '#gallery' }
+            { name: 'Galerii', link: '#gallery' },
+            { name: 'Üritus', link: '#event' }
         ];
         this._bindEvents();
         this._setup();
@@ -194,6 +258,8 @@ var App = (function () {
             window.location.hash = this._navLinks[0].link;
         }
         var nav = new Navigation(this._navLinks);
+        this._checkParams();
+        this._urlChanged();
     };
     App.prototype._urlChanged = function () {
         var _this = this;
@@ -205,8 +271,26 @@ var App = (function () {
                 else if (value.link === _this._navLinks[1].link) {
                     _this.page = new Gallery();
                 }
+                else if (value.link === _this._navLinks[2].link) {
+                    _this.page = new EventPage();
+                }
             }
         });
+    };
+    App.prototype._checkParams = function () {
+        var name = Helper.getParameterByName('name');
+        var joined = Helper.getParameterByName('joined');
+        if (name && joined) {
+            Helper.removeParams();
+            var people = JSON.parse(localStorage.getItem('people'));
+            if (!people) {
+                people = [];
+            }
+            var person = { name: name, joined: joined }; // {name: name, joined: joined};
+            people.push(person);
+            console.log(people);
+            localStorage.setItem('people', JSON.stringify(people));
+        }
     };
     return App;
 }());

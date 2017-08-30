@@ -39,8 +39,7 @@ class Home extends Page {
         this._text.innerHTML = `Id: ${this._restJSON.id} Sisu: ${this._restJSON.content}`;
     }
     private _refresh() {
-        const restAnswer =
-            Helper.getHTMLTemplate('http://rest-service.guides.spring.io/greeting');
+        const restAnswer = Helper.getHTMLTemplate('http://rest-service.guides.spring.io/greeting');
         this._restJSON = JSON.parse(restAnswer) as IGreeting;
         this._render();
     }
