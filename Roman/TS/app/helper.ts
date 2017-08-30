@@ -1,5 +1,20 @@
 namespace Helper {
     console.log('helper.ts');
+    export const getParameterByName = (name: string) => {
+        const url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&'); // keerukamate nimetuste korral
+        const regex = new RegExp(`[?&]${name}(=([^&#]*)|&|#|$)`);
+        const result = regex.exec(url);
+        if (!result) {
+            return undefined;
+        }
+        if (!result[2]) {
+            return '';
+        }
+        console.log(result[0]);
+
+        return decodeURIComponent(result[2].replace(/\+/g, ' '));
+    };
 
     export const getHTMLTemplate = (file: string) => {
         let templateHTML = 'fail';
