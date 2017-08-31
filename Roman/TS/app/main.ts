@@ -29,6 +29,7 @@ class App {
         }
         const nav = new Navigation(this._navLinks);
         this._checkParams();
+        this._urlChanged();
     }
 
     private _urlChanged() {
@@ -51,6 +52,7 @@ class App {
         const name = Helper.getParameterByName('name');
         const joined  = Helper.getParameterByName('joined') as Joined;
         if (name && joined) {
+            Helper.removeParams();
             let people: IParticipant[] = JSON.parse(localStorage.getItem('people'));
             if (!people) {
                 people = [];

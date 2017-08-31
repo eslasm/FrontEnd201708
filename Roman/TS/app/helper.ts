@@ -15,7 +15,9 @@ namespace Helper {
 
         return decodeURIComponent(result[2].replace(/\+/g, ' '));
     };
-
+    export const removeParams = () => {
+        window.location.href = window.location.origin + window.location.hash;
+    };
     export const getHTMLTemplate = (file: string) => {
         let templateHTML = 'fail';
         const xmlHttp = new XMLHttpRequest();

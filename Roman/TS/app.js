@@ -26,6 +26,9 @@ var Helper;
         console.log(result[0]);
         return decodeURIComponent(result[2].replace(/\+/g, ' '));
     };
+    Helper.removeParams = function () {
+        window.location.href = window.location.origin + window.location.hash;
+    };
     Helper.getHTMLTemplate = function (file) {
         var templateHTML = 'fail';
         var xmlHttp = new XMLHttpRequest();
@@ -86,7 +89,7 @@ var EventPage = (function (_super) {
         this._list = this._peopleModule.querySelector('ul');
     };
     EventPage.prototype._bindEvents = function () {
-        // tyhi
+        this._list.addEventListener('click', this._deletePerson.bind(this));
     };
     EventPage.prototype._render = function () {
         var _this = this;
@@ -98,6 +101,16 @@ var EventPage = (function (_super) {
             people += parsePass2;
         });
         this._list.innerHTML = people;
+    };
+    EventPage.prototype._deletePerson = function (e) {
+        if (e.target && e.target.nodeName === 'BUTTON') {
+            var element = e.target.parentElement;
+            var parent_1 = element.parentElement;
+            var index = Array.prototype.indexOf.call(parent_1.children, element);
+            this._participant.splice(index, 1); // see kututab HTMLs
+            localStorage.setItem('people', JSON.stringify(this._participant)); // see kustutab andmebaasis
+            this._render();
+        }
     };
     return EventPage;
 }(Page));
@@ -244,6 +257,7 @@ var App = (function () {
         }
         var nav = new Navigation(this._navLinks);
         this._checkParams();
+        this._urlChanged();
     };
     App.prototype._urlChanged = function () {
         var _this = this;
@@ -265,6 +279,7 @@ var App = (function () {
         var name = Helper.getParameterByName('name');
         var joined = Helper.getParameterByName('joined');
         if (name && joined) {
+            Helper.removeParams();
             var people = JSON.parse(localStorage.getItem('people'));
             if (!people) {
                 people = [];
