@@ -33,6 +33,7 @@ class App {
     }
 
     private _urlChanged() {
+        Helper.formatEmails('at-mail', '(ät)');
         this._navLinks.forEach(
             (value: INavLink) => {
                 if (window.location.hash === value.link) {

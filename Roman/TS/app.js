@@ -29,6 +29,15 @@ var Helper;
     Helper.removeParams = function () {
         window.location.href = window.location.origin + window.location.hash;
     };
+    Helper.formatEmails = function (className, splitter) {
+        var emails = document.getElementsByClassName(className);
+        for (var index = 0; index < emails.length; ++index) {
+            var emailParts = emails.item(index).innerHTML.split(splitter);
+            var email = emailParts[0] + "@" + emailParts[1];
+            var link = "<a href=\"mailto:" + email + "\">" + email + "</a>";
+            emails.item(index).outerHTML = link;
+        }
+    };
     Helper.getHTMLTemplate = function (file) {
         var templateHTML = 'fail';
         var xmlHttp = new XMLHttpRequest();
@@ -47,6 +56,54 @@ var Helper;
         return target.replace(mustache, content);
     };
 })(Helper || (Helper = {}));
+/// <reference path='helper.ts' />
+console.log('animal.ts');
+var Animals = (function () {
+    function Animals() {
+        this._animals = ['Karu', 'Kass', 'Hunt'];
+        this._cacheDOM();
+        this._bindEvents();
+        this._render();
+    }
+    Animals.prototype._cacheDOM = function () {
+        this._microTemplate = Helper.getHTMLTemplate('templates/animal-template.html');
+        this._animalsModule = document.getElementById('animalsModule');
+        this._button = this._animalsModule.getElementsByClassName('button').item(0);
+        this._input = this._animalsModule.getElementsByTagName('input').item(0);
+        this._list = this._animalsModule.getElementsByTagName('ul').item(0);
+    };
+    Animals.prototype._bindEvents = function () {
+        this._button.addEventListener('click', this.addAnimal.bind(this));
+        this._list.addEventListener('click', this._removeAnimal.bind(this));
+    };
+    Animals.prototype._render = function () {
+        var _this = this;
+        var animals = '';
+        this._animals.forEach(function (value) {
+            var parsePass1 = Helper.parseHTMLString(_this._microTemplate, '{{name}}', value);
+            animals += parsePass1;
+        });
+        this._list.innerHTML = animals;
+    };
+    Animals.prototype.showAnimals = function () {
+        console.log(this._animals);
+    };
+    Animals.prototype.addAnimal = function (name) {
+        var animalName = (typeof name === 'string') ? name : this._input.value;
+        this._animals.push(animalName);
+        this._render();
+    };
+    Animals.prototype._removeAnimal = function (e) {
+        if (e.target && e.target.nodeName === 'BUTTON') {
+            var element = e.target.parentElement;
+            var parent_1 = element.parentElement;
+            var index = Array.prototype.indexOf.call(parent_1.children, element);
+            this._animals.splice(index, 1); // see kututab HTMLs
+            this._render();
+        }
+    };
+    return Animals;
+}());
 console.log('page.ts');
 /**
  * Page
@@ -105,8 +162,8 @@ var EventPage = (function (_super) {
     EventPage.prototype._deletePerson = function (e) {
         if (e.target && e.target.nodeName === 'BUTTON') {
             var element = e.target.parentElement;
-            var parent_1 = element.parentElement;
-            var index = Array.prototype.indexOf.call(parent_1.children, element);
+            var parent_2 = element.parentElement;
+            var index = Array.prototype.indexOf.call(parent_2.children, element);
             this._participant.splice(index, 1); // see kututab HTMLs
             localStorage.setItem('people', JSON.stringify(this._participant)); // see kustutab andmebaasis
             this._render();
@@ -162,6 +219,7 @@ var Gallery = (function (_super) {
 }(Page));
 /// <reference path='helper.ts' />
 /// <reference path='page.ts' />
+/// <reference path='animals.ts' />
 console.log('home.ts');
 var Home = (function (_super) {
     __extends(Home, _super);
@@ -179,6 +237,7 @@ var Home = (function (_super) {
         this._homeModule = document.getElementById('home');
         this._button = this._homeModule.querySelector('#refresh');
         this._text = this._homeModule.querySelector('#restOutput');
+        var animals = new Animals();
         this._refresh();
     };
     Home.prototype._bindEvents = function () {
@@ -261,6 +320,7 @@ var App = (function () {
     };
     App.prototype._urlChanged = function () {
         var _this = this;
+        Helper.formatEmails('at-mail', '(ät)');
         this._navLinks.forEach(function (value) {
             if (window.location.hash === value.link) {
                 if (value.link === _this._navLinks[0].link) {
