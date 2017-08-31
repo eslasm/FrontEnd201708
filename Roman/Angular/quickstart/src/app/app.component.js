@@ -32,8 +32,9 @@ var AppComponent = (function () {
 }());
 AppComponent = __decorate([
     core_1.Component({
+        moduleId: module.id,
         selector: 'my-app',
-        templateUrl: 'templates/people.html',
+        templateUrl: './../templates/people.html',
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

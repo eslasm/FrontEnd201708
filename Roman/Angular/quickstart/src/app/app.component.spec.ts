@@ -5,7 +5,7 @@ import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 describe('AppComponent', function () {
-  let de: DebugElement;
+  let de: DebugElement, de2: DebugElement;
   let comp: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
 
@@ -14,19 +14,14 @@ describe('AppComponent', function () {
       imports: [FormsModule],
       declarations: [ AppComponent ]
     })
-    .compileComponents().then(
-      () => {
-        fixture = TestBed.createComponent(AppComponent);
-        comp = fixture.componentInstance;
-        de = fixture.debugElement.query(By.css('h1'));
-      }
-    );
+    .compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AppComponent);
     comp = fixture.componentInstance;
     de = fixture.debugElement.query(By.css('h1'));
+    de2 = fixture.debugElement.query(By.css('h2'));
   });
 
   it('should create component', () => {
@@ -42,7 +37,7 @@ describe('AppComponent', function () {
 
   it('Sättesta korrektne alapealkiri', () => {
     fixture.detectChanges();
-    const h2 = fixture.debugElement.query(By.css('h2')).nativeElement;
+    const h2 = de2.nativeElement;
     expect(h2.innerText).toMatch('Alapealkiri');
   });
 });

@@ -4,7 +4,7 @@ var forms_1 = require("@angular/forms");
 var testing_1 = require("@angular/core/testing");
 var platform_browser_1 = require("@angular/platform-browser");
 describe('AppComponent', function () {
-    var de;
+    var de, de2;
     var comp;
     var fixture;
     beforeEach(testing_1.async(function () {
@@ -12,16 +12,13 @@ describe('AppComponent', function () {
             imports: [forms_1.FormsModule],
             declarations: [app_component_1.AppComponent]
         })
-            .compileComponents().then(function () {
-            fixture = testing_1.TestBed.createComponent(app_component_1.AppComponent);
-            comp = fixture.componentInstance;
-            de = fixture.debugElement.query(platform_browser_1.By.css('h1'));
-        });
+            .compileComponents();
     }));
     beforeEach(function () {
         fixture = testing_1.TestBed.createComponent(app_component_1.AppComponent);
         comp = fixture.componentInstance;
         de = fixture.debugElement.query(platform_browser_1.By.css('h1'));
+        de2 = fixture.debugElement.query(platform_browser_1.By.css('h2'));
     });
     it('should create component', function () {
         expect(comp).toBeDefined();
@@ -33,7 +30,7 @@ describe('AppComponent', function () {
     });
     it('Sättesta korrektne alapealkiri', function () {
         fixture.detectChanges();
-        var h2 = fixture.debugElement.query(platform_browser_1.By.css('h2')).nativeElement;
+        var h2 = de2.nativeElement;
         expect(h2.innerText).toMatch('Alapealkiri');
     });
 });

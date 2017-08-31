@@ -11,8 +11,9 @@ const PEOPLE: Person[] = [
   { id: 105, name: 'Anna'},
 ];
 @Component({
+  moduleId: module.id,
   selector: 'my-app',
-  templateUrl: 'templates/people.html',
+  templateUrl: './../templates/people.html',
 })
 export class AppComponent  {
   name = 'Angular 4';
