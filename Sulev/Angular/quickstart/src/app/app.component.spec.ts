@@ -1,4 +1,5 @@
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By }           from '@angular/platform-browser';
@@ -6,11 +7,13 @@ import { DebugElement } from '@angular/core';
 
 describe('AppComponent', function () {
   let de: DebugElement;
+  //let di: DebugElement; // variable to help me understand and test Karma
   let comp: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ FormsModule ],
       declarations: [ AppComponent ]
     })
     .compileComponents();
@@ -20,6 +23,7 @@ describe('AppComponent', function () {
     fixture = TestBed.createComponent(AppComponent);
     comp = fixture.componentInstance;
     de = fixture.debugElement.query(By.css('h1'));
+    //di = fixture.debugElement.query(By.css('h2'));
   });
 
   it('should create component', () => expect(comp).toBeDefined() );
@@ -29,5 +33,10 @@ describe('AppComponent', function () {
     const h1 = de.nativeElement;
     expect(h1.innerText).toMatch(/angular/i,
       '<h1> should say something about "Angular"');
+  });
+  it('Sättesta korrektne alapealkiri!', () => {
+    fixture.detectChanges();
+    const h2 = fixture.debugElement.query(By.css('h2')).nativeElement;
+    expect(h2.innerText).toMatch(/Alapealkiri/i, '<h2> peaks sisaldama stringi: Alapealkiri!');
   });
 });
