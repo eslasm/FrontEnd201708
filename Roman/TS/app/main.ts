@@ -29,9 +29,11 @@ class App {
         }
         const nav = new Navigation(this._navLinks);
         this._checkParams();
+        this._urlChanged();
     }
 
     private _urlChanged() {
+        Helper.formatEmails('at-mail', '(ät)');
         this._navLinks.forEach(
             (value: INavLink) => {
                 if (window.location.hash === value.link) {
@@ -51,6 +53,7 @@ class App {
         const name = Helper.getParameterByName('name');
         const joined  = Helper.getParameterByName('joined') as Joined;
         if (name && joined) {
+            Helper.removeParams();
             let people: IParticipant[] = JSON.parse(localStorage.getItem('people'));
             if (!people) {
                 people = [];

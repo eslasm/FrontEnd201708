@@ -32,7 +32,7 @@ class EventPage extends Page {
         this._list = this._peopleModule.querySelector('ul');
     }
     protected _bindEvents() {
-        // tyhi
+        this._list.addEventListener('click', this._deletePerson.bind(this));
     }
     protected _render() {
         this._participant = JSON.parse(localStorage.getItem('people'));
@@ -45,5 +45,16 @@ class EventPage extends Page {
             }
         );
         this._list.innerHTML = people;
+    }
+
+    private _deletePerson(e: Event) {
+        if (e.target && (e.target as Element).nodeName === 'BUTTON') {
+            const element = (e.target as Element).parentElement;
+            const parent = element.parentElement;
+            const index = Array.prototype.indexOf.call(parent.children, element);
+            this._participant.splice(index, 1); // see kututab HTMLs
+            localStorage.setItem('people', JSON.stringify(this._participant)); // see kustutab andmebaasis
+            this._render();
+        }
     }
 }
